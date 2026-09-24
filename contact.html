@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Zakirul Alam Bhuiyan</title>
+    <meta name="description"
+        content="Academic website of Professor Zakirul Alam Bhuiyan. Computer Science — Cybersecurity, Trustworthy AI/ML, Wireless Sensing, and Secure Systems.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="revision.css">
+    <script>(function(){try{if(localStorage.getItem('theme')==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}})();</script>
+</head>
+
+<body>
+    <!-- Abstract Canvas Background (Neural/Wireless design) -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">ZM <span>Bhuiyan</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="research.html">Research & Students</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="projects.html">Project/Lab</a></li>
+                <li><a href="join-lab.html">Join-the-Lab</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" aria-label="Toggle Theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-info slide-right">
+                    <h3><i class="fa-solid fa-paper-plane"></i> Get In Touch</h3>
+                    <p>If you are interested in any of the opportunities or collaborations, please reach out.</p>
+
+                    <div class="office-address">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <p><strong>Office (RH):</strong> JMH 334, 441 E Fordham Road, Bronx NY, 10458<br>
+                           <strong>Office (LC):</strong> 113 W 60th St, Manhattan, NY 10023<br>
+                           <strong>Phone:</strong> <a href="tel:+17188170582">(718) 817-0582</a><br>
+                           <strong>Email:</strong> <a href="mailto:md@fordham.edu">md@fordham.edu</a> / <a href="mailto:zakirulalam@gmail.com">zakirulalam@gmail.com</a></p>
+                    </div>
+
+                    <div class="social-links profile-links" aria-label="Academic and professional profiles">
+<a href="https://www.linkedin.com/in/zakirul-alam-bhuiyan-19418713" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i><span>LinkedIn</span></a>
+<a href="https://dblp.org/pid/88/7649" target="_blank" rel="noopener noreferrer" aria-label="DBLP" title="DBLP"><i class="fa-solid fa-book"></i><span>DBLP</span></a>
+<a href="mailto:md@fordham.edu" aria-label="Email" title="Email"><i class="fa-solid fa-envelope"></i><span>Email</span></a></div>
+                </div>
+
+                <form class="contact-form slide-left">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" maxlength="200" required autocomplete="name" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" maxlength="200" required autocomplete="email" placeholder="you@university.edu">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" maxlength="200" required placeholder="PhD Position Inquiry">
+                    </div>
+                    <div class="form-group">
+                        <label for="content">Message</label>
+                        <textarea id="content" name="content" maxlength="10000" rows="4" required placeholder="Hello Professor..."></textarea>
+                    </div>
+                    <p id="contact-status" class="form-status" role="status" aria-live="polite"></p>
+                    <button type="submit" class="btn primary-btn submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">ZM <span>Bhuiyan</span></a>
+                <p>Professor of Computer Science at Fordham University, advancing trustworthy AI, cybersecurity, wireless sensing, and resilient IoT/CPS systems.</p>
+            </div>
+            <div class="footer-links">
+                <a href="research.html">Research</a>
+                <a href="publications.html">Publications</a>
+                <a href="teaching.html">Teaching</a>
+                <a href="projects.html">Project/Lab</a>
+                <a href="join-lab.html">Join the Lab</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-focus">
+                <span>Trustworthy AI/ML</span>
+                <span>Cybersecurity</span>
+                <span>IoT/CPS Security</span>
+                <span>Wireless Sensing</span>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Professor Zakirul Alam Bhuiyan. All rights reserved.</p>
+                <a href="mailto:md@fordham.edu">md@fordham.edu</a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
+

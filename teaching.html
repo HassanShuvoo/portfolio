@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Teaching | Zakirul Alam Bhuiyan</title>
+<meta content="Academic website of Professor Zakirul Alam Bhuiyan. Computer Science — Cybersecurity, Trustworthy AI/ML, Wireless Sensing, and Secure Systems." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Outfit:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Font Awesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<link href="revision.css" rel="stylesheet"/>
+<script>(function(){try{if(localStorage.getItem('theme')==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}})();</script>
+</head>
+<body>
+<!-- Abstract Canvas Background (Neural/Wireless design) -->
+<canvas id="bg-canvas"></canvas>
+<!-- Navigation -->
+<nav id="navbar">
+<div class="nav-container">
+<a class="logo" href="index.html">ZM <span>Bhuiyan</span></a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="research.html">Research &amp; Students</a></li>
+<li><a href="publications.html">Publications</a></li>
+<li><a href="teaching.html">Teaching</a></li>
+<li><a href="projects.html">Project/Lab</a></li>
+<li><a href="join-lab.html">Join-the-Lab</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+<div class="nav-controls">
+<button aria-label="Toggle Theme" class="theme-toggle">
+<svg class="sun-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
+<svg class="moon-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<button aria-label="Toggle Menu" class="mobile-menu-btn">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Container -->
+<section class="teaching container">
+<!-- Hero Section -->
+<div class="teaching-hero slide-up">
+<h2 class="section-title">Teaching &amp; Pedagogy</h2>
+<p class="section-subtitle">
+                Dr. Bhuiyan’s teaching emphasizes the integration of theoretical rigor, practical application, and ethical responsibility to prepare students to become skilled, ethical, and adaptable leaders in Cybersecurity, AI, and Data Science.
+            </p>
+</div>
+<!-- Section 1: Teaching Philosophy -->
+<div class="philosophy-container slide-up">
+<div class="philosophy-quote">
+                "Dr. Bhuiyan’s teaching philosophy emphasizes the integration of theoretical rigor, practical application, and ethical responsibility. He strives to create an engaging and inclusive learning environment that fosters critical thinking and problem-solving. Through this approach, he aims to prepare students to become skilled, ethical, and adaptable professionals capable of contributing to both industry and academia."
+            </div>
+<div class="philosophy-grid">
+<div class="philosophy-card tilt-3d">
+<div class="card-icon-box">
+<i class="fa-solid fa-graduation-cap"></i>
+</div>
+<h4>Student-Centered &amp; Research-Informed</h4>
+<p>Integrating current cutting-edge advances in cybersecurity, AI, and data science directly into the classroom curriculum.</p>
+</div>
+<div class="philosophy-card tilt-3d">
+<div class="card-icon-box">
+<i class="fa-solid fa-laptop-code"></i>
+</div>
+<h4>Hands-On &amp; Problem-Based</h4>
+<p>Enabling students to apply complex theoretical concepts to solve real-world, high-stakes security challenges.</p>
+</div>
+<div class="philosophy-card tilt-3d">
+<div class="card-icon-box">
+<i class="fa-solid fa-users"></i>
+</div>
+<h4>Collaborative Learning</h4>
+<p>Fostering team synergy, shared challenge resolution, and encouraging independent critical thinking paradigms.</p>
+</div>
+<div class="philosophy-card tilt-3d">
+<div class="card-icon-box">
+<i class="fa-solid fa-medal"></i>
+</div>
+<h4>Research Integration &amp; Mentorship</h4>
+<p>Guiding students through research mentorship toward novel innovations, academic publishing, and professional communication.</p>
+</div>
+</div>
+</div>
+<!-- Section 2: Interactive Course Catalog -->
+<div class="courses-search-section slide-up">
+<h3 class="section-title">Course Catalog &amp; Directory</h3>
+<div class="courses-search-wrapper">
+<i class="fa-solid fa-magnifying-glass search-icon"></i>
+<input aria-label="Search courses" id="course-search" placeholder="Search by course code, title, semester, or keywords..." type="text"/>
+<span class="course-count" id="course-count">Showing all 20 courses</span>
+</div>
+<div class="course-tab-row">
+<button class="course-tab-btn active" data-filter="all">All Courses</button>
+<button class="course-tab-btn" data-filter="cybersecurity">Cybersecurity &amp; Privacy</button>
+<button class="course-tab-btn" data-filter="data-analytics">Data, Cloud &amp; Analytics</button>
+<button class="course-tab-btn" data-filter="core-cs">Core CS &amp; Others</button>
+<button class="course-tab-btn" data-filter="temple-univ">Temple University</button>
+</div>
+</div>
+<div class="course-card-grid slide-up">
+<!-- Cybersecurity Courses -->
+<div class="course-card cybersecurity tilt-3d" data-category="cybersecurity" data-code="CISC 5650" data-level="grad" data-title="Cybersecurity Essentials">
+<div class="course-card-header">
+<span class="course-code">CISC 5650</span><h4>Cybersecurity Essentials</h4>
+<div class="badge-container">
+<span class="badge-level badge-grad">Graduate</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>2016–2020, 2024 Fall</span>
+</div>
+</div>
+<div class="course-card cybersecurity tilt-3d" data-category="cybersecurity" data-code="CISC 6640" data-level="grad cert" data-title="Privacy and Security in Big Data">
+<div class="course-card-header">
+<span class="course-code">CISC 6640</span><h4>Privacy and Security in Big Data</h4>
+<div class="badge-container">
+<span class="badge-level badge-grad">Graduate</span>
+<span class="badge-level badge-cert">Professional Cert</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>2017–2024 [Fall], 2017–2025 [Summer]</span>
+</div>
+</div>
+<div class="course-card cybersecurity tilt-3d" data-category="cybersecurity" data-code="CISC 6600" data-level="grad cert" data-title="Cloud Computing Security">
+<div class="course-card-header">
+<span class="course-code">CISC 6600</span><h4>Cloud Computing Security</h4>
+<div class="badge-container">
+<span class="badge-level badge-grad">Graduate</span>
+<span class="badge-level badge-cert">Professional Cert</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>2020–Current [Spring]</span>
+</div>
+</div>
+<div class="course-card cybersecurity tilt-3d" data-category="cybersecurity" data-code="CISC 6800" data-level="grad cert" data-title="Malware Analytics &amp; Software Security">
+<div class="course-card-header">
+<span class="course-code">CISC 6800</span><h4>Malware Analytics &amp; Software Security</h4>
+<div class="badge-container">
+<span class="badge-level badge-grad">Graduate</span>
+<span class="badge-level badge-cert">Professional Cert</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>2017–2021 [Summer]</span>
+</div>
+</div>
+<div class="course-card cybersecurity tilt-3d" data-category="cybersecurity" data-code="CISC 6630" data-level="grad" data-title="Wireless Security">
+<div class="course-card-header">
+<span class="course-code">CISC 6630</span><h4>Wireless Security</h4>
+<div class="badge-container">
+<span class="badge-level badge-grad">Graduate</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>2019–2021</span>
+</div>
+</div>
+<div class="course-card cybersecurity tilt-3d" data-category="cybersecurity" data-code="CISC 3600" data-level="undergrad" data-title="Secure Cyber Networks">
+<div class="course-card-header">
+<span class="course-code">CISC 3600</span><h4>Secure Cyber Networks</h4>
+<div class="badge-container">
+<span class="badge-level badge-undergrad">Undergraduate</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>2020–2021</span>
+</div>
+</div>
+<div class="course-card cybersecurity tilt-3d" data-category="cybersecurity" data-code="CISC 3580" data-level="undergrad" data-title="Cybersecurity and Applications">
+<div class="course-card-header">
+<span class="course-code">CISC 3580</span><h4>Cybersecurity and Applications</h4>
+<div class="badge-container">
+<span class="badge-level badge-undergrad">Undergraduate</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>2017, 2020, 2021</span>
+</div>
+</div>
+<div class="course-card cybersecurity tilt-3d" data-category="cybersecurity" data-code="CISC 8999" data-level="grad" data-title="Special Topics in Cybersecurity">
+<div class="course-card-header">
+<span class="course-code">CISC 8999</span><h4>Special Topics in Cybersecurity</h4>
+<div class="badge-container">
+<span class="badge-level badge-grad">Special / PhD</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>2017, 2018</span>
+</div>
+</div>
+<div class="course-card cybersecurity tilt-3d" data-category="cybersecurity" data-code="CISC 5009" data-level="grad" data-title="Network Essentials">
+<div class="course-card-header">
+<span class="course-code">CISC 5009</span><h4>Network Essentials</h4>
+<div class="badge-container">
+<span class="badge-level badge-grad">Graduate</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>2023–2025 [Fall]</span>
+</div>
+</div>
+<!-- Data, Cloud & Analytics -->
+<div class="course-card data-analytics tilt-3d" data-category="data-analytics" data-code="CISC 4631" data-level="undergrad" data-title="Data Mining">
+<div class="course-card-header">
+<span class="course-code">CISC 4631</span><h4>Data Mining</h4>
+<div class="badge-container">
+<span class="badge-level badge-undergrad">Undergraduate</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>2016–2018, 2021–2025</span>
+</div>
+</div>
+<div class="course-card data-analytics tilt-3d" data-category="data-analytics" data-code="CISC 4999" data-level="undergrad" data-title="Machine Learning / Data Mining">
+<div class="course-card-header">
+<span class="course-code">CISC 4999</span><h4>Machine Learning / Data Mining</h4>
+<div class="badge-container">
+<span class="badge-level badge-undergrad">Undergraduate</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>2020–2021</span>
+</div>
+</div>
+<div class="course-card data-analytics tilt-3d" data-category="data-analytics" data-code="CISC 6899" data-level="grad" data-title="Data Analytics Capstone">
+<div class="course-card-header">
+<span class="course-code">CISC 6899</span><h4>Data Analytics Capstone</h4>
+<div class="badge-container">
+<span class="badge-level badge-grad">Graduate Capstone</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>2018</span>
+</div>
+</div>
+<div class="course-card data-analytics tilt-3d" data-category="data-analytics" data-code="CISC 5550" data-level="grad cert" data-title="Cloud Computing">
+<div class="course-card-header">
+<span class="course-code">CISC 5550</span><h4>Cloud Computing</h4>
+<div class="badge-container">
+<span class="badge-level badge-grad">Graduate</span>
+<span class="badge-level badge-cert">Professional Cert</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>2017–2019 [Summer]</span>
+</div>
+</div>
+<!-- Core CS & Other Courses -->
+<div class="course-card core-cs tilt-3d" data-category="core-cs" data-code="CISC 1600 &amp; 1610" data-level="undergrad" data-title="Programming with C++">
+<div class="course-card-header">
+<span class="course-code">CISC 1600/1610</span><h4>Programming with C++</h4>
+<div class="badge-container">
+<span class="badge-level badge-undergrad">Undergraduate</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>2020</span>
+</div>
+</div>
+<div class="course-card core-cs tilt-3d" data-category="core-cs" data-code="CISC 1100" data-level="undergrad" data-title="Discrete Structures">
+<div class="course-card-header">
+<span class="course-code">CISC 1100</span><h4>Discrete Structures (Structure of CS)</h4>
+<div class="badge-container">
+<span class="badge-level badge-undergrad">Undergraduate</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>2020</span>
+</div>
+</div>
+<div class="course-card core-cs tilt-3d" data-category="core-cs" data-code="ZZRU ADVI" data-level="adv" data-title="Freshman Advising">
+<div class="course-card-header">
+<span class="course-code">ZZRU ADVI</span><h4>Freshman Advising</h4>
+<div class="badge-container">
+<span class="badge-level badge-adv">Advising</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>2017–2020</span>
+</div>
+</div>
+<!-- Temple University Courses -->
+<div class="course-card temple-univ tilt-3d" data-category="temple-univ" data-code="CISC 3319" data-level="undergrad" data-title="Wireless Networks and Security">
+<div class="course-card-header">
+<span class="course-code">CISC 3319</span><h4>Wireless Networks and Security</h4>
+<div class="badge-container">
+<span class="badge-level badge-undergrad">Temple UG</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>2015–2016</span>
+</div>
+</div>
+<div class="course-card temple-univ tilt-3d" data-category="temple-univ" data-code="CISC 5644" data-level="grad" data-title="Distributed Systems">
+<div class="course-card-header">
+<span class="course-code">CISC 5644</span><h4>Distributed Systems</h4>
+<div class="badge-container">
+<span class="badge-level badge-grad">Temple Graduate</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>2015–2016</span>
+</div>
+</div>
+<div class="course-card temple-univ tilt-3d" data-category="temple-univ" data-code="CIS 5639" data-level="grad" data-title="Computer Communications and Networks">
+<div class="course-card-header">
+<span class="course-code">CIS 5639</span><h4>Computer Communications and Networks</h4>
+<div class="badge-container">
+<span class="badge-level badge-grad">Temple Graduate</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>Temple University</span>
+</div>
+</div>
+<div class="course-card temple-univ tilt-3d" data-category="temple-univ" data-code="CIS 9669" data-level="grad" data-title="Distributed and Parallel Computer Systems">
+<div class="course-card-header">
+<span class="course-code">CIS 9669</span><h4>Distributed and Parallel Computer Systems</h4>
+<div class="badge-container">
+<span class="badge-level badge-grad">Temple PhD / Grad</span>
+</div>
+</div>
+<div class="course-terms">
+<i class="fa-regular fa-calendar-days"></i>
+<span>Temple University</span>
+</div>
+</div>
+</div>
+<!-- Section 3: New Course Design & Development -->
+<div class="course-design-section slide-up">
+<h3 class="section-title">New Course Design &amp; Development</h3>
+<p class="section-subtitle">
+                Dr. Bhuiyan has led the pioneering design and curriculum development of several academic courses and professional certification syllabi:
+            </p>
+<div class="design-card-grid">
+<div class="design-card tilt-3d">
+<div class="design-card-meta">
+<span class="design-card-year">2022</span><h4>CISC 6910: Data and Information Fusion</h4>
+<span class="badge-level badge-grad">PG-level</span>
+</div>
+
+<p style="color: var(--text-sec); font-size: 0.88rem; line-height: 1.5; margin-top: 0.4rem;">
+                        Pioneering PG-level design outlining multi-sensor architecture, neural network fusion systems, and data alignment models.
+                    </p>
+</div>
+<div class="design-card tilt-3d">
+<div class="design-card-meta">
+<span class="design-card-year">2017</span><h4>CISC 6640: Privacy and Security in Big Data</h4>
+<div class="badge-container">
+<span class="badge-level badge-grad">PG-level</span>
+<span class="badge-level badge-cert">Cert</span>
+</div>
+</div>
+
+<p style="color: var(--text-sec); font-size: 0.88rem; line-height: 1.5; margin-top: 0.4rem;">
+                        Developed as a core postgraduate course and recognized as a Professional Certification syllabus.
+                    </p>
+</div>
+<div class="design-card tilt-3d">
+<div class="design-card-meta">
+<span class="design-card-year">2017</span><h4>CISC 6800: Malware Analytics &amp; Software Security</h4>
+<div class="badge-container">
+<span class="badge-level badge-grad">PG-level</span>
+<span class="badge-level badge-cert">Cert</span>
+</div>
+</div>
+
+<p style="color: var(--text-sec); font-size: 0.88rem; line-height: 1.5; margin-top: 0.4rem;">
+                        Pioneering syllabus design incorporating binary security, program reverse-engineering, and professional certification parameters.
+                    </p>
+</div>
+<div class="design-card tilt-3d">
+<div class="design-card-meta">
+<span class="design-card-year">2020</span><h4>CISC 6600: Cloud Computing Security</h4>
+<div class="badge-container">
+<span class="badge-level badge-grad">PG-level</span>
+<span class="badge-level badge-cert">Cert</span>
+</div>
+</div>
+
+<p style="color: var(--text-sec); font-size: 0.88rem; line-height: 1.5; margin-top: 0.4rem;">
+                        Covers high-fidelity infrastructure safety, container security models, hypervisor validation, and certification standards.
+                    </p>
+</div>
+<div class="design-card tilt-3d">
+<div class="design-card-meta">
+<span class="design-card-year">2017</span><h4>CISC 5550: Cloud Computing</h4>
+<div class="badge-container">
+<span class="badge-level badge-grad">PG-level</span>
+<span class="badge-level badge-cert">Cert</span>
+</div>
+</div>
+
+<p style="color: var(--text-sec); font-size: 0.88rem; line-height: 1.5; margin-top: 0.4rem;">
+                        Comprehensive post-graduate syllabus design covering distributed cloud paradigms and virtualization security.
+                    </p>
+</div>
+<div class="design-card tilt-3d">
+<div class="design-card-meta">
+<span class="design-card-year">2019</span><h4>CISC 6750: IoT Forensics and Security</h4>
+<div class="badge-container">
+<span class="badge-level badge-grad">PG-level</span>
+<span class="badge-level badge-cert">Cert</span>
+</div>
+</div>
+
+<p style="color: var(--text-sec); font-size: 0.88rem; line-height: 1.5; margin-top: 0.4rem;">
+                        Designed to deliver modern paradigms in IoT device identification, memory forensics, and smart sensor threat landscapes.
+                    </p>
+</div>
+<div class="design-card tilt-3d">
+<div class="design-card-meta">
+<span class="design-card-year">2016</span><h4>CISC 5650: Cybersecurity Essentials</h4>
+<span class="badge-level badge-grad">PG-level</span>
+</div>
+
+<p style="color: var(--text-sec); font-size: 0.88rem; line-height: 1.5; margin-top: 0.4rem;">
+                        A foundational post-graduate program designing secure architectural modules and standard cryptographic mechanisms.
+                    </p>
+</div>
+<div class="design-card tilt-3d">
+<div class="design-card-meta">
+<span class="design-card-year">2018</span><h4>CISC 3580: Cybersecurity and Applications</h4>
+<span class="badge-level badge-grad">PG-level</span>
+</div>
+
+<p style="color: var(--text-sec); font-size: 0.88rem; line-height: 1.5; margin-top: 0.4rem;">
+                        Formulated PG-level labs focusing on wireless network defenses, RFID security, and practical penetration testing methodologies.
+                    </p>
+</div>
+<div class="design-card tilt-3d">
+<div class="design-card-meta">
+<span class="design-card-year">2019</span><h4>CISC 6630: Wireless Security</h4>
+<span class="badge-level badge-grad">PG-level</span>
+</div>
+
+<p style="color: var(--text-sec); font-size: 0.88rem; line-height: 1.5; margin-top: 0.4rem;">
+                        High-fidelity protocol models including WPA3 authentication, rogue AP checks, and sensory communication security.
+                    </p>
+</div>
+<div class="design-card tilt-3d">
+<div class="design-card-meta">
+<span class="design-card-year">2018</span><h4>CISC 3600: Secure Cyber Networks</h4>
+<span class="badge-level badge-undergrad">UG-level</span>
+</div>
+
+<p style="color: var(--text-sec); font-size: 0.88rem; line-height: 1.5; margin-top: 0.4rem;">
+                        Pioneering undergraduate program outlining standard network defenses, firewalls, and continuous security metrics.
+                    </p>
+</div>
+<div class="design-card tilt-3d">
+<div class="design-card-meta">
+<span class="design-card-year">2019</span><h4>CISC 4510: Computer Security Systems</h4>
+<span class="badge-level badge-undergrad">UG-level</span>
+</div>
+
+<p style="color: var(--text-sec); font-size: 0.88rem; line-height: 1.5; margin-top: 0.4rem;">
+                        Designed to deliver rigorous conceptual models of access control, vulnerability assessments, and secure OS designs.
+                    </p>
+</div>
+<div class="design-card tilt-3d">
+<div class="design-card-meta"><h4>CISC 6660: Applied Cryptography</h4>
+<span class="badge-level badge-grad">PhD-level</span>
+</div>
+
+<p style="color: var(--text-sec); font-size: 0.88rem; line-height: 1.5; margin-top: 0.4rem;">
+                        Doctoral seminar exploring modern encryption algorithms, zero-knowledge proofs, and post-quantum cryptography.
+                    </p>
+</div>
+<div class="design-card tilt-3d">
+<div class="design-card-meta"><h4>CISC 66XX: Trustworthy AI</h4>
+<div class="badge-container">
+<span class="badge-level badge-grad">PG-level</span>
+<span class="badge-level badge-proposed">Proposed</span>
+</div>
+</div>
+
+<p style="color: var(--text-sec); font-size: 0.88rem; line-height: 1.5; margin-top: 0.4rem;">
+                        Newly proposed graduate syllabus focusing on red-teaming LLMs, aligning neural architectures, and defense.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Section 4: Curriculum Development & Improvement -->
+<div class="curriculum-section slide-up">
+<h3 class="section-title">Curriculum Board &amp; Committee Leadership</h3>
+<p class="section-subtitle">
+                Dr. Bhuiyan actively chairs and contributes to key academic boards to continuously adapt the Computer Science curriculum to industry standards and modern technological innovations:
+            </p>
+<div class="curriculum-grid">
+<div class="curriculum-card tilt-3d">
+<div>
+<div class="curriculum-role role-cochair">Cochair</div>
+<h4>CS Major Revision Committee</h4>
+</div>
+<div class="curriculum-year">2025 – 2026</div>
+</div>
+<div class="curriculum-card tilt-3d">
+<div>
+<div class="curriculum-role role-chair">Chair</div>
+<h4>Curriculum Development &amp; Improvement Committee</h4>
+</div>
+<div class="curriculum-year">2023 – 2025</div>
+</div>
+<div class="curriculum-card tilt-3d">
+<div>
+<div class="curriculum-role role-member">Member</div>
+<h4>MS in Data Science Curriculum Development Committee</h4>
+</div>
+<div class="curriculum-year">2016 – 2020</div>
+</div>
+<div class="curriculum-card tilt-3d">
+<div>
+<div class="curriculum-role role-member">Member</div>
+<h4>PhD in CS Proposal and Curriculum Development Committee</h4>
+</div>
+<div class="curriculum-year">2016 – 2020</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="site-footer">
+<div class="container footer-content">
+<div class="footer-brand">
+<a class="footer-logo" href="index.html">ZM <span>Bhuiyan</span></a>
+<p>Professor of Computer Science at Fordham University, advancing trustworthy AI, cybersecurity, wireless sensing, and resilient IoT/CPS systems.</p>
+</div>
+<div class="footer-links">
+<a href="research.html">Research</a>
+<a href="publications.html">Publications</a>
+<a href="teaching.html">Teaching</a>
+<a href="projects.html">Project/Lab</a>
+<a href="join-lab.html">Join the Lab</a>
+<a href="contact.html">Contact</a>
+</div>
+<div class="footer-focus">
+<span>Trustworthy AI/ML</span>
+<span>Cybersecurity</span>
+<span>IoT/CPS Security</span>
+<span>Wireless Sensing</span>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Professor Zakirul Alam Bhuiyan. All rights reserved.</p>
+<a href="mailto:md@fordham.edu">md@fordham.edu</a>
+</div>
+</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

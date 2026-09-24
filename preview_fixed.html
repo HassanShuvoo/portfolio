@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Verification Driven Trust</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{ margin:0; padding:0; box-sizing:border-box; }
+
+    body{
+      background: radial-gradient(ellipse at 50% 0%, #0d2045 0%, #060d1f 55%, #020509 100%);
+      min-height:100vh;
+      overflow-x:hidden;
+      color:white;
+      font-family:'Barlow Condensed', Arial, sans-serif;
+    }
+
+    .container{
+      width:100%;
+      min-height:100vh;
+      position:relative;
+      padding:18px 20px 40px;
+    }
+
+    /* TOP LABELS */
+    .top-left{
+      position:absolute;
+      top:16px; left:22px;
+      font-size:12px;
+      letter-spacing:2px;
+      opacity:.85;
+      font-family:'Barlow',sans-serif;
+      font-weight:600;
+      text-transform:uppercase;
+    }
+    .top-center{
+      position:absolute;
+      top:16px; left:50%;
+      transform:translateX(-50%);
+      font-size:12px;
+      letter-spacing:2px;
+      opacity:.75;
+      font-family:'Barlow',sans-serif;
+      font-weight:600;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    /* TITLE */
+    .title{
+      text-align:center;
+      margin-top:42px;
+      font-size:52px;
+      font-weight:900;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      font-family:'Barlow Condensed',sans-serif;
+      text-shadow:0 0 40px rgba(255,255,255,.15);
+    }
+
+    /* ===== MAIN DIAGRAM WRAPPER ===== */
+    .diagram-section{
+      position:relative;
+      width:960px;
+      height:560px;
+      margin:30px auto 0;
+    }
+
+    /* SVG layer for loops */
+    .diagram-svg{
+      position:absolute;
+      top:0; left:0;
+      width:100%; height:100%;
+      pointer-events:none;
+    }
+
+    /* HEXAGONS */
+    .hex{
+      position:absolute;
+      width:220px;
+      height:248px;
+      clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      font-size:26px;
+      font-weight:900;
+      text-transform:uppercase;
+      line-height:1.15;
+      letter-spacing:1px;
+    }
+
+    /* Blue hex - top left */
+    .hex-blue{
+      background:linear-gradient(145deg,#6ed4ff 0%,#2a7ecf 40%,#1558a8 100%);
+      left:160px; top:80px;
+      box-shadow:0 0 50px rgba(70,180,255,.35), inset 0 0 30px rgba(255,255,255,.1);
+    }
+    /* Purple hex - top right */
+    .hex-purple{
+      background:linear-gradient(145deg,#d96fff 0%,#9040d8 40%,#6022aa 100%);
+      right:160px; top:80px;
+      box-shadow:0 0 50px rgba(180,80,255,.35), inset 0 0 30px rgba(255,255,255,.1);
+    }
+    /* Green hex - bottom center */
+    .hex-green{
+      background:linear-gradient(145deg,#8fffab 0%,#3fc46a 40%,#1e8047 100%);
+      left:50%; transform:translateX(-50%);
+      top:260px;
+      box-shadow:0 0 50px rgba(80,220,120,.35), inset 0 0 30px rgba(255,255,255,.1);
+    }
+
+    /* CENTER BOXES */
+    .cbox{
+      position:absolute;
+      background:rgba(80,90,110,.75);
+      backdrop-filter:blur(8px);
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:9px;
+      text-align:center;
+      font-weight:700;
+      font-family:'Barlow Condensed',sans-serif;
+      text-transform:uppercase;
+      box-shadow:0 0 20px rgba(0,0,0,.4);
+      padding:8px 14px;
+      line-height:1.25;
+    }
+    /* Trustworthy top center */
+    .cbox-top{
+      top:55px; left:50%; transform:translateX(-50%);
+      width:215px; font-size:12px; letter-spacing:.5px;
+    }
+    /* Networking systems */
+    .cbox-net{
+      top:205px; left:50%; transform:translateX(-50%);
+      width:140px; font-size:13px;
+    }
+    /* IoT/CPS */
+    .cbox-iot{
+      top:285px; left:50%; transform:translateX(-50%);
+      width:225px; font-size:11.5px;
+    }
+
+    /* SIDE PILL LABELS */
+    .pill{
+      position:absolute;
+      padding:11px 22px;
+      border-radius:50px;
+      font-size:12px;
+      font-weight:700;
+      text-transform:uppercase;
+      text-align:center;
+      line-height:1.4;
+      letter-spacing:.5px;
+      font-family:'Barlow Condensed',sans-serif;
+    }
+    .pill-gold{
+      background:linear-gradient(90deg,#9a7030,#e8c878,#b88a40,#ead080,#9a7030);
+      color:#1a1000;
+      box-shadow:0 0 18px rgba(220,180,80,.3);
+    }
+    .pill-silver{
+      background:linear-gradient(90deg,#aaaaaa,#f0f0f0,#c8c8c8,#f5f5f5,#aaaaaa);
+      color:#222;
+      box-shadow:0 0 18px rgba(200,200,200,.25);
+    }
+
+    /* left gold pill */
+    .pill-left{
+      left:0px; top:230px; width:200px;
+    }
+    /* right silver pill */
+    .pill-right{
+      right:0px; top:230px; width:200px;
+    }
+    /* bottom-left gold pill */
+    .pill-bl{
+      left:150px; bottom:10px; width:215px;
+    }
+    /* bottom-right gold pill */
+    .pill-br{
+      right:150px; bottom:10px; width:215px;
+    }
+
+    /* ===== VSERIES FRAMEWORK ===== */
+    .framework-section{
+      margin-top:30px;
+      text-align:center;
+    }
+    .framework-title{
+      font-size:38px;
+      font-weight:900;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-family:'Barlow Condensed',sans-serif;
+    }
+    .framework-title span{
+      font-style:italic;
+    }
+
+    .framework-row{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:0;
+      margin-top:28px;
+      position:relative;
+    }
+
+    /* connector line behind boxes */
+    .framework-row::before{
+      content:'';
+      position:absolute;
+      height:3px;
+      background:rgba(255,255,255,.25);
+      width:560px;
+      top:50%; transform:translateY(-50%);
+      z-index:0;
+    }
+
+    .fbox{
+      width:130px; height:90px;
+      border-radius:14px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+      font-weight:900;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      font-family:'Barlow Condensed',sans-serif;
+      position:relative;
+      z-index:1;
+      box-shadow:0 4px 20px rgba(0,0,0,.35);
+    }
+    .fbox-icon{
+      font-size:26px;
+      margin-bottom:4px;
+      line-height:1;
+    }
+
+    .arrow{
+      font-size:28px;
+      color:rgba(255,255,255,.7);
+      padding:0 8px;
+      z-index:1;
+      font-weight:900;
+    }
+
+    .fb-orange{ background:linear-gradient(145deg,#f5b642,#e07a10); }
+    .fb-teal{   background:linear-gradient(145deg,#3dd8d8,#1a9090); }
+    .fb-blue{   background:linear-gradient(145deg,#5abfff,#1e6fb5); }
+    .fb-pink{   background:linear-gradient(145deg,#e055d0,#8e1a8e); }
+
+    .lifecycle-text{
+      margin-top:18px;
+      font-size:15px;
+      letter-spacing:2.5px;
+      text-transform:uppercase;
+      opacity:.8;
+      font-family:'Barlow',sans-serif;
+      font-weight:600;
+    }
+
+    .footer-icons{
+      display:flex;
+      justify-content:center;
+      gap:40px;
+      margin-top:16px;
+      opacity:.75;
+      flex-wrap:wrap;
+    }
+    .footer-icons div{
+      font-size:13px;
+      font-family:'Barlow',sans-serif;
+      font-weight:600;
+      letter-spacing:1px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .footer-icons .fi-icon{
+      font-size:16px;
+    }
+
+    /* PARTICLES */
+    .particle{
+      position:absolute;
+      width:2px; height:2px;
+      background:#ff2266;
+      border-radius:50%;
+      animation:blink 2s infinite alternate;
+      pointer-events:none;
+    }
+    @keyframes blink{
+      from{ opacity:.15; transform:scale(1); }
+      to{   opacity:.9;  transform:scale(2); }
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:1050px){
+      .diagram-section{ transform:scale(.72); transform-origin:top center; margin-bottom:-160px; }
+      .title{ font-size:38px; }
+    }
+    @media(max-width:680px){
+      .diagram-section{ transform:scale(.46); transform-origin:top center; margin-bottom:-300px; }
+      .title{ font-size:24px; letter-spacing:1px; }
+      .framework-row{ transform:scale(.7); transform-origin:top center; margin-bottom:-30px; }
+      .framework-title{ font-size:28px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="top-left">DR. BHUIYAN'S WORK</div>
+  <div class="top-center">DYNAMIC AND ADVERSARIAL ENVIRONMENTS</div>
+
+  <h1 class="title">DATA VERIFICATION-DRIVEN TRUST</h1>
+
+  <!-- ===== MAIN DIAGRAM ===== -->
+  <div class="diagram-section">
+
+    <!-- SVG for oval loops -->
+    <svg class="diagram-svg" viewBox="0 0 960 560" xmlns="http://www.w3.org/2000/svg">
+      <!-- Outer ellipse -->
+      <ellipse cx="480" cy="290" rx="370" ry="185"
+        fill="none" stroke="rgba(255,255,255,.65)" stroke-width="3.5"
+        filter="url(#glow)"/>
+      <!-- Inner ellipse -->
+      <ellipse cx="480" cy="285" rx="278" ry="145"
+        fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3"
+        filter="url(#glow)"/>
+      <defs>
+        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="4" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+    </svg>
+
+    <!-- Hexagons -->
+    <div class="hex hex-blue">CYBERSECURITY</div>
+    <div class="hex hex-purple">ARTIFICIAL<br>INTELLIGENCE</div>
+    <div class="hex hex-green">WIRELESS<br>TECHNOLOGIES</div>
+
+    <!-- Center labels -->
+    <div class="cbox cbox-top">TRUSTWORTHY/RELIABLE<br>DATA, MODELS AND SYSTEMS</div>
+    <div class="cbox cbox-net">NETWORKING<br>SYSTEMS</div>
+    <div class="cbox cbox-iot">IOT/CPS<br>(INTERNET OF THINGS-<br>CYBER-PHYSICAL SYSTEMS)</div>
+
+    <!-- Side pills -->
+    <div class="pill pill-gold pill-left">TRUSTWORTHY/RELIABLE<br>DATA, MODELS AND SYSTEMS</div>
+    <div class="pill pill-silver pill-right">PRIVATE DATA<br>MODELS AND SYSTEMS</div>
+    <div class="pill pill-gold pill-bl">RESILIENT DATA<br>MODELS AND SYSTEMS</div>
+    <div class="pill pill-gold pill-br">RESILIENT DATA<br>MODELS AND SYSTEMS</div>
+
+  </div>
+
+  <!-- ===== VSERIES FRAMEWORK ===== -->
+  <div class="framework-section">
+    <div class="framework-title"><span>v</span>Series FRAMEWORK</div>
+
+    <div class="framework-row">
+      <div class="fbox fb-orange">
+        <div class="fbox-icon">📊</div>
+        vDATA
+      </div>
+      <div class="arrow">➜</div>
+      <div class="fbox fb-teal">
+        <div class="fbox-icon">🔒</div>
+        vPRIVACY
+      </div>
+      <div class="arrow">➜</div>
+      <div class="fbox fb-blue">
+        <div class="fbox-icon">📶</div>
+        vWiMONITOR
+      </div>
+      <div class="arrow">➜</div>
+      <div class="fbox fb-pink">
+        <div class="fbox-icon">🧠</div>
+        AIData
+      </div>
+    </div>
+
+    <div class="lifecycle-text">FULL LIFECYCLE OF IOT &amp; CYBER-PHYSICAL SYSTEMS</div>
+
+    <div class="footer-icons">
+      <div><span class="fi-icon">⊕</span> Sensing</div>
+      <div><span class="fi-icon">✉</span> Communication</div>
+      <div><span class="fi-icon">🖥</span> Processing</div>
+      <div><span class="fi-icon">⚙</span> Actuation</div>
+      <div><span class="fi-icon">🔧</span> Maintenance</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const container = document.querySelector('.container');
+  for(let i=0;i<90;i++){
+    const p = document.createElement('div');
+    p.classList.add('particle');
+    p.style.left = Math.random()*100+'%';
+    p.style.top  = Math.random()*100+'%';
+    p.style.animationDuration = (Math.random()*3+1)+'s';
+    p.style.animationDelay   = (Math.random()*2)+'s';
+    p.style.opacity = Math.random()*.5;
+    container.appendChild(p);
+  }
+</script>
+
+</body>
+</html>

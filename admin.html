@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Editor | Zakirul Alam Bhuiyan</title>
+    <meta name="robots" content="noindex, nofollow">
+<meta name="description"
+        content="Academic website of Professor Zakirul Alam Bhuiyan. Computer Science — Cybersecurity, Trustworthy AI/ML, Wireless Sensing, and Secure Systems.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="revision.css">
+    <script>(function(){try{if(localStorage.getItem('theme')==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}})();</script>
+</head>
+
+<body>
+    <!-- Abstract Canvas Background (Neural/Wireless design) -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">ZM <span>Bhuiyan</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="research.html">Research & Students</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="projects.html">Project/Lab</a></li>
+                <li><a href="join-lab.html">Join-the-Lab</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" aria-label="Toggle Theme">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+<section class="container admin-page">
+<h1 class="section-title">Website Editor</h1>
+<form id="admin-login" class="editor-login">
+<label for="admin-token">Administrator token</label>
+<input id="admin-token" type="password" autocomplete="off" required placeholder="Token from the server terminal">
+<button class="btn primary-btn" type="submit">Unlock editor</button>
+</form>
+<p id="admin-status" role="status" aria-live="polite"></p>
+<div id="admin-workspace" hidden>
+<div class="editor-toolbar"><h2>Publications</h2><button id="admin-lock" class="btn secondary-btn">Lock editor</button><button id="export-publications" class="btn secondary-btn">Export JSON</button></div>
+<p>Add or update a publication below. Citation numbers are assigned automatically by year, newest first.</p>
+<form id="publication-editor" class="editor-grid">
+<input type="hidden" name="id">
+<label class="full">Authors<input name="authors" required maxlength="3000" placeholder="Author names, in publication order"></label>
+<label class="full">Title<input name="title" required maxlength="3000"></label>
+<label class="full">Journal / conference / publisher<input name="venue" required maxlength="3000"></label>
+<label>Year<input name="year" type="number" min="1900" max="2100" required></label>
+<label>Type<select name="kind"><option value="journals">Journal / Transactions</option><option value="conferences">Conference</option><option value="books">Book / Magazine</option></select></label>
+<label>Volume<input name="volume" maxlength="100"></label><label>Issue / number<input name="issue" maxlength="100"></label>
+<label>Pages<input name="pages" maxlength="100"></label><label>Impact factor<input name="impact_factor" type="number" min="0" max="999" step=".001"></label>
+<label class="full">Publication / DOI URL<input name="url" type="url" maxlength="3000" placeholder="https://doi.org/…"></label>
+<label class="full">Comment<input name="comment" maxlength="3000"></label>
+<fieldset class="full"><legend>Research topics</legend><label><input name="topics" value="cyber" type="checkbox"> Cybersecurity</label><label><input name="topics" value="ai" type="checkbox"> Trustworthy AI / ML</label><label><input name="topics" value="wireless" type="checkbox"> Wireless sensing</label><label><input name="topics" value="iot" type="checkbox"> IoT / CPS</label></fieldset>
+<fieldset class="full"><legend>Journal recognition</legend><label><input name="prestigious" type="checkbox"> Prestigious journal</label><label><input name="sci" type="checkbox"> SCI indexed</label></fieldset>
+<div class="full editor-toolbar"><button type="submit" class="btn primary-btn">Save publication</button><button type="reset" class="btn secondary-btn">New / clear form</button></div>
+</form>
+<div id="editor-records"></div>
+<h2>Contact inbox</h2><p>Messages submitted through the website are saved here.</p><button id="refresh-inbox" class="btn secondary-btn">Refresh inbox</button><div id="editor-inbox"></div>
+</div></section>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">ZM <span>Bhuiyan</span></a>
+                <p>Professor of Computer Science at Fordham University, advancing trustworthy AI, cybersecurity, wireless sensing, and resilient IoT/CPS systems.</p>
+            </div>
+            <div class="footer-links">
+                <a href="research.html">Research</a>
+                <a href="publications.html">Publications</a>
+                <a href="teaching.html">Teaching</a>
+                <a href="projects.html">Project/Lab</a>
+                <a href="join-lab.html">Join the Lab</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-focus">
+                <span>Trustworthy AI/ML</span>
+                <span>Cybersecurity</span>
+                <span>IoT/CPS Security</span>
+                <span>Wireless Sensing</span>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Professor Zakirul Alam Bhuiyan. All rights reserved.</p>
+                <a href="mailto:md@fordham.edu">md@fordham.edu</a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+<script src="admin.js"></script>
+</body>
+
+</html>
+
