@@ -1,223 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Zakirul Alam Bhuiyan</title>
-    <meta name="description"
-        content="Academic website of Professor Zakirul Alam Bhuiyan. Computer Science — Cybersecurity, Trustworthy AI/ML, Wireless Sensing, and Secure Systems.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="revision.css">
-    <script>(function(){try{if(localStorage.getItem('theme')==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professor Zakirul Alam Bhuiyan — cybersecurity, trustworthy AI/ML, secure signal engineering and IoT/CPS research at Fordham University.">
+  <meta name="theme-color" content="#0a1b2d">
+  <title>Home | Zakirul Alam Bhuiyan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/revision.css" rel="stylesheet">
+  <!-- Page-specific styles follow the shared styles; the other site pages are unchanged. -->
+  <link href="css/homepage-pdf.css" rel="stylesheet">
+  <link href="css/homepage-site-consistency.css" rel="stylesheet">
+  <script>(function(){try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light')}catch(e){}})();</script>
 </head>
+<body class="homepage-pdf">
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-<body>
-    <!-- Abstract Canvas Background (Neural/Wireless design) -->
-    <canvas id="bg-canvas"></canvas>
+<nav id="navbar" aria-label="Main navigation">
+  <div class="nav-container">
+    <a class="logo" href="index.html" aria-label="Zakirul Alam Bhuiyan home">ZA <span>Bhuiyan</span></a>
+    <ul class="nav-links" id="main-nav-links">
+      <li><a class="active" aria-current="page" href="index.html">Home</a></li>
+      <li><a href="research.html">Research &amp; Students</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="projects.html">Project/Lab</a></li>
+      <li><a href="join-lab.html">Join-the-Lab</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme" title="Toggle theme">
+        <svg class="sun-icon" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="moon-icon" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation menu" aria-controls="main-nav-links" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
+    </div>
+  </div>
+</nav>
 
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">ZM <span>Bhuiyan</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html" >Home</a></li>
-                <li><a href="research.html">Research & Students</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="teaching.html">Teaching</a></li>
-                <li><a href="projects.html">Project/Lab</a></li>
-                <li><a href="join-lab.html">Join-the-Lab</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="nav-controls">
-                <button class="theme-toggle" aria-label="Toggle Theme">
-                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                </button>
-                <button class="mobile-menu-btn" aria-label="Toggle Menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-            </div>
+<main>
+<section class="pdf-hero" id="home" aria-labelledby="professor-title">
+  <div class="pdf-shell pdf-hero-inner">
+    <div class="pdf-hero-copy">
+      <h1 id="professor-title">Zakirul Alam Bhuiyan, <span>PhD, SMIEEE, SMACM</span></h1>
+      <p class="pdf-role"><i aria-hidden="true" class="fa-solid fa-user-graduate"></i> Cybersecurity Professor | Associate Chair of the CIS Department</p>
+      <p class="pdf-affiliation"><i aria-hidden="true" class="fa-solid fa-building-columns"></i> Fordham Center for Cybersecurity | Fordham University | New York City, USA</p>
+      <p class="pdf-research-focus">Cybersecurity <b>•</b> Trustworthy AI/ML <b>•</b> Secure Signal Engineering (SSE) <b>•</b> Wireless Signals <b>•</b> IoT/CPS Applications</p>
+      <p class="pdf-research-summary">Advancing verification-driven foundations, trustworthy AI methods, and deployable system architectures for maintaining trust across the sensing-to-decision lifecycle. The research focuses on preserving the integrity, quality, provenance, security, and privacy of signals and data across sensing, communication, learning, and decision-making, enabling AI, wireless, and IoT/CPS systems to remain secure, robust, resilient, and dependable under dynamic and adversarial environments.</p>
+    </div>
+    <div class="pdf-profile-portrait"><img src="assets/profile.png" alt="Portrait of Professor Zakirul Alam Bhuiyan in a research laboratory" width="1024" height="1035" fetchpriority="high"></div>
+  </div>
+</section>
+
+<div class="pdf-shell pdf-link-row">
+  <div class="pdf-profile-links" aria-label="Academic and professional profiles">
+    <a href="https://www.fordham.edu/academics/departments/computer-and-information-science/faculty-and-administration/" target="_blank" rel="noopener noreferrer">Fordham CIS Dept.</a>
+    <a href="https://scholar.google.com/citations?user=JqHr6TcAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+    <a href="https://dblp.org/pid/88/7649.html" target="_blank" rel="noopener noreferrer">DBLP</a>
+    <a href="https://orcid.org/0000-0002-9513-9990" target="_blank" rel="noopener noreferrer">ORCID</a>
+    <a href="https://www.linkedin.com/in/zakirul-alam-bhuiyan-19418713/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="mailto:zakirulalam@gmail.com"><i aria-hidden="true" class="fa-solid fa-envelope"></i> Email</a>
+    <a class="pdf-contact-link" href="contact.html">Contact Me</a>
+  </div>
+  <a class="pdf-open-link" href="join-lab.html">OPEN Research Position</a>
+</div>
+
+<section class="pdf-content pdf-shell" id="accomplishments" aria-labelledby="accomplishments-heading">
+  <h2 class="pdf-highlight-title" id="accomplishments-heading"><span>Selected Accomplishments at a Glance</span></h2>
+  <div class="pdf-two-column">
+    <div class="pdf-primary-column">
+      <section class="pdf-data-block" aria-labelledby="scholarly-heading">
+        <h3 class="pdf-section-heading" id="scholarly-heading">Selected Scholarly Indicators</h3>
+        <div class="pdf-stat-grid" role="list" aria-label="Scholarly indicators">
+          <div class="pdf-stat-row pdf-stat-row-top" role="presentation">
+            <div class="pdf-stat" role="listitem"><strong>250+</strong><span>Publications</span></div>
+            <div class="pdf-stat" role="listitem"><strong>100+</strong><span>Conference Papers</span></div>
+            <div class="pdf-stat" role="listitem"><strong>14,500+</strong><span>Citations</span></div>
+            <div class="pdf-stat" role="listitem"><strong>65</strong><span>h-index</span></div>
+            <div class="pdf-stat" role="listitem"><strong>100+</strong><span>JCR Q1 Papers</span></div>
+            <div class="pdf-stat" role="listitem"><strong>10,000+</strong><span>5-Year Citations</span></div>
+          </div>
+          <div class="pdf-stat-row pdf-stat-row-bottom" role="presentation">
+            <div class="pdf-stat" role="listitem"><strong>150+</strong><span>SCI Journal Papers</span></div>
+            <div class="pdf-stat" role="listitem"><strong>65+</strong><span>IEEE/ACM Trans./Mag.</span></div>
+            <div class="pdf-stat" role="listitem"><strong>7</strong><span>Best Paper Awards</span></div>
+            <div class="pdf-stat" role="listitem"><strong>25+</strong><span>ESI Highly Cited Papers</span></div>
+            <div class="pdf-stat" role="listitem"><strong>5</strong><span>ESI Hot Papers in CS</span></div>
+          </div>
         </div>
-    </nav>
+      </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text slide-right">
-                <h1 class="glitch" data-text="Zakirul Alam Bhuiyan, PhD, SMIEEE, SMACM">Zakirul Alam Bhuiyan, <span class="title-credentials">PhD, SMIEEE, SMACM</span></h1>
-                <p class="hero-role"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i> Cybersecurity Professor | Associate Chair of the CIS Department</p>
-                <p class="hero-affiliation"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> Fordham Center for Cybersecurity | Fordham University | New York City, USA</p>
-                <h2 class="tagline">Advancing Trustworthy, Secure, and Intelligent Systems</h2>
-                <p class="bio-summary">
-                    Advancing trustworthy, secure, and intelligent systems at the intersection of cybersecurity, AI and data science, and wireless communications for IoT/CPS. Dr. Bhuiyan's research develops verification-driven frameworks and deployable solutions that ensure data integrity, quality, and privacy, while enabling AI models and system infrastructures to remain reliable, robust, and resilient under dynamic and adversarial conditions.
-                </p>
-                <div class="hero-buttons">
-                    <a href="contact.html" class="btn primary-btn"><i class="fa-solid fa-paper-plane"></i>Contact Me</a>
-                    <button type="button" id="open-quick-pubs" class="btn secondary-btn"><i class="fa-solid fa-book-open"></i>Simple Publications</button>
-                    <button type="button" id="open-news-modal" class="btn secondary-btn"><i class="fa-solid fa-bullhorn"></i>News</button>
-                    <button type="button" id="open-highlights-modal" class="btn secondary-btn"><i class="fa-solid fa-star"></i>Research Highlights</button>
-                </div>
-<div class="social-links profile-links" aria-label="Academic and professional profiles">
-<a href="https://www.linkedin.com/in/zakirul-alam-bhuiyan-19418713" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i><span>LinkedIn</span></a>
-<a href="https://dblp.org/pid/88/7649" target="_blank" rel="noopener noreferrer" aria-label="DBLP" title="DBLP"><i class="fa-solid fa-book"></i><span>DBLP</span></a>
-<a href="mailto:md@fordham.edu" aria-label="Email" title="Email"><i class="fa-solid fa-envelope"></i><span>Email</span></a></div>
-            </div>
-            <div class="hero-image slide-left">
-                <div class="img-wrapper">
-                    <img src="assets/profile.png" alt="Professor Zakirul Alam Bhuiyan">
-                </div>
-            </div>
-        </div>
-    </section>
+      <section class="pdf-data-block pdf-venues" aria-labelledby="venues-heading">
+        <h3 class="pdf-section-heading" id="venues-heading">Selected High-Impact Publication Venues</h3>
+        <ul class="pdf-hollow-list">
+          <li><strong>IEEE:</strong> TMC, TDSC, TC, TPDS, ComMag, TII, TAAS, T-ITS, TOSN, CSUR, IoT-J</li>
+          <li><strong>ACM:</strong> TOSN, TAAS, CSUR, TCPS, ToIT, TOMM</li>
+          <li><strong>Other Journals:</strong> INS, INF, JNCA, TSUSC, TETC, TBD, C&amp;S, and COSE</li>
+          <li><strong>Flagship Conferences:</strong> INFOCOM, SECON, DSN, SRDS, ICC, GLOBECOM, ICCCN, MASS, TrustCom</li>
+        </ul>
+      </section>
 
-    <div id="quick-pubs-modal" class="quick-pubs-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="quick-pubs-title">
-        <div class="quick-pubs-backdrop" data-close-modal></div>
-        <div class="quick-pubs-panel">
-            <button type="button" class="quick-pubs-close" aria-label="Close" data-close-modal>&times;</button>
-            <h3 id="quick-pubs-title">Selected Publications Snapshot</h3>
-            <p class="quick-pubs-note">A quick list of representative publications. For the complete list, open the full publications page.</p>
-            <ol class="quick-pubs-list">
-                <li> Hong Shijia, Tian Qi, Shen Jian, Zakirul Alam Bhuiyan, Vijayakumar Pandi, He Debiao, An Efficient iTreeKEM-Based Group Key Agreement Protocol for Flying Ad-hoc Networks, IEEE Transactions on Mobile Computing (TMC), 2026</li>
-                <li> Ali Alfatemi, Mohamed Rahouti, Zakirul Alam Bhuiyan, Abdellah Chehri, Mohammed Aledhari, and Gwanggil Jeon, "Enhancing DDoS Detection for Edge Networks with Noise-Tolerant Shallow Neural Networks in Computational Social Systems," IEEE Transactions on Computational Social Systems (TCSC), 2025</li>
-                <li> T. Hai, Z. Bhuiyan, M. Rahouti, Jincheng Zhou, Jian Shen, "Blockchain-Based Trustworthiness in Cross-Border Data Exchange in 5G-Powered Intelligent Connected Vehicles," IEEE Networks, 2024</li>
-                <li> S. Zhang, Z. Li, K. C. Li, Zakirul Alam Bhuiyan, "Blockchain-Based Hybrid Reliable User Selection Scheme for Task Allocation in Mobile Crowd Sensing," IEEE Translations Network Science Engineering (TNSE), 2024</li>
-                <li> Ta Li, Youliang Tian, Jinbo Xiong, Zakirul Alam Bhuiyan, "FVP-EOC: Fair, Verifiable, and Privacy-Preserving Edge Outsourcing Computing in 5G-Enabled IIoT," IEEE Transactions Industrial Informatics (TII), 2023</li>
-                <li> Xuan Zhao, Zakirul Alam Bhuiyan, et al., "TrCMP: A Dependable App Usage Design for User Behavior Analysis through Cyber-Physical Parameters," Journal of Systems Architecture (JSA), 2020</li>
-                <li> J Zhang, Z Bhuiyan, X Yang, T Wang, X Xu, T Hayajneh, F. Khan, "AntiConcealer: Reliable Detection of Adversary Concealed Behaviors in EdgeAI-Assisted IoT," IEEE Internet of Things, 2022</li>
-            </ol>
-            <a href="publications.html" class="btn secondary-btn">Open Full Publications</a>
-        </div>
+      <section class="pdf-data-block pdf-awards" aria-labelledby="awards-heading">
+        <h3 class="pdf-section-heading" id="awards-heading"><mark>30+</mark> Awards/Honors</h3>
+        <ul class="pdf-hollow-list">
+          <li>7 IEEE/Springer/Journal venues</li>
+          <li>James C. McGroddy Award for <em>Innovation in Education</em> | 2026</li>
+          <li><em>Highly Cited Researcher</em> of the world, Clarivate/Web of Science | 3-time recognitions</li>
+          <li><em>Rising Star of Science</em>, Research.com | U.S. Rank #164 (2023)</li>
+          <li><em>2% Scientists</em>, Stanford/Elsevier | 2021–2025</li>
+          <li>Highly Ranked Scholar, ScholarGPS | 2024–2026</li>
+          <li>IEEE TCSC Award for Research Excellence | 2024</li>
+          <li>IEEE TCSC MCR Award | 2024</li>
+          <li>Fordham Mid-Career Researcher Award | 2023–2024</li>
+        </ul>
+      </section>
+      <section class="pdf-data-block pdf-leadership" aria-labelledby="editorial-heading">
+        <h3 class="pdf-section-heading" id="editorial-heading"><mark>25+</mark> Journal Editorial and Guest-Editor Roles</h3>
+        <ul class="pdf-disc-list"><li>Including IEEE TBD, TCC, TII, TOMM, IoT-J, TCPS, <i>Information Sciences, FGCS, AIHC,</i> and <i>HCIS</i></li></ul>
+      </section>
+      <section class="pdf-data-block pdf-leadership" aria-labelledby="conference-heading">
+        <h3 class="pdf-section-heading" id="conference-heading"><mark>50+</mark> Conference Leadership, Organization, and TPC Lead Roles</h3>
+        <ul class="pdf-disc-list"><li>Including TrustCom, DASC, AidTSP, Smart World Congress, ISPA, CyberSciTech, UbiSec, IEEE INFOCOM, and UIC</li></ul>
+      </section>
+      <section class="pdf-data-block pdf-leadership" aria-labelledby="talks-heading">
+        <h3 class="pdf-section-heading" id="talks-heading"><mark>50+</mark> Keynotes, Seminars, Panels, and Invited Talks</h3>
+      </section>
     </div>
 
-    <div id="news-modal" class="quick-pubs-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="news-title">
-        <div class="quick-pubs-backdrop" data-close-news></div>
-        <div class="quick-pubs-panel">
-            <button type="button" class="quick-pubs-close" aria-label="Close" data-close-news>&times;</button>
-            <h3 id="news-title">NEWS:</h3>
-            <ul class="quick-pubs-list">
-                <li>Fully Funded PhD position available in Data-driven Trustworthy AI/ML, Cybersecurity, IoT/CPS Privacy, Cryptography/Blockchain. <a href="join-lab.html">Learn more</a></li>
-                <li>Funded/Voluntary MS/Undergrad research position available in Data-driven Trustworthy AI/ML, cybersecurity. <a href="join-lab.html">Learn more</a></li>
-                <li>Funded MS/Undergrad research position available in Secure Wireless Signal Collection/Engineering. <a href="join-lab.html">Learn more</a></li>
-            </ul>
-            <a href="join-lab.html" class="btn secondary-btn">See Open Positions</a>
+    <aside class="pdf-sidebar" aria-label="Recent updates and research opportunities">
+      <section class="pdf-side-card pdf-recent" id="home-news" aria-labelledby="updates-heading">
+        <h3 id="updates-heading">RECENT UPDATES</h3>
+        <ul>
+          <li>New Paper Published in <strong>IEEE TDSC, 2026</strong>: <span>“Group Authentication and Key Agreement Scheme”</span></li>
+          <li>New Paper Published in <strong>IEEE TMC, 2026</strong>, about <span>“iTreeKEM-Based Group Key Agreement Protocol for Drone Networks”</span></li>
+          <li>Dr. Bhuiyan Received the <strong>“James C. McGroddy Award”</strong> for <span>Innovation in Education, 2026</span>, one of the most prestigious education awards at Fordham University.</li>
+        </ul>
+      </section>
+      <section class="pdf-side-card pdf-open-positions" aria-labelledby="positions-heading">
+        <h3 id="positions-heading">SEE OPEN POSITIONS</h3>
+        <ul>
+          <li>Fully funded PhD positions available in Data-Driven Trustworthy AI/ML, Cybersecurity, IoT/CPS Privacy, and Cryptography/Blockchain. <a href="join-lab.html">Learn more</a></li>
+          <li>Funded and voluntary MS/Undergraduate research positions available in Data-Driven Trustworthy AI/ML and Cybersecurity. <a href="join-lab.html">Learn more</a></li>
+          <li>Funded and voluntary MS/Undergraduate research positions available in Secure Wireless Signal Collection and Engineering. <a href="join-lab.html">Learn more</a></li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <section class="pdf-publications" id="selected-publications" aria-labelledby="selected-publications-heading">
+    <h2 class="pdf-highlight-title" id="selected-publications-heading"><span>Selected Publications Snapshot</span></h2>
+    <ul>
+      <li>S. Hong, Q. Tian, J. Shen, Z. A. Bhuiyan, et al., “An Efficient iTreeKEM-Based Group Key Agreement Protocol for Flying Ad-Hoc Networks,” <em>IEEE Transactions on Mobile Computing (TMC)</em>, 2026.</li>
+      <li>H. Tan, C. Fang, J. Shen, Z. A. Bhuiyan, et al., “Cross-Domain Heterogeneous Data Aggregation With Dynamic Group Key Agreement for Hybrid Satellite Networks,” <em>IEEE Transactions on Dependable and Secure Computing (TDSC)</em>, 2026.</li>
+      <li>A. Alfatemi, M. Rahouti, Z. A. Bhuiyan, et al., “ShallowNet: A Lightweight Neural Network Approach for Efficient Flow-Level DDoS Detection,” <em>IEEE Transactions on Computational Social Systems (TCSS)</em>, 2026.</li>
+      <li>Y. Tian, S. Wang, J. Xiong, R. Bi, Z. Zhou, Z. A. Bhuiyan, et al., “Robust and Privacy-Preserving Decentralized Deep Federated Learning Training: Focusing on Digital Healthcare Applications,” <em>IEEE Transactions on Computational Biology and Bioinformatics (TCBB)</em>, 2024.</li>
+      <li>T. Hai, Z. A. Bhuiyan, et al., “Blockchain-Based Trustworthiness in Cross-Border Data Exchange in 5G-Powered Intelligent Connected Vehicles,” <em>IEEE Network</em>, 2025.</li>
+      <li>S. Zhang, Z. Li, K. C. Li, Z. A. Bhuiyan, et al., “Blockchain-Based Hybrid Reliable User Selection Scheme for Task Allocation in Mobile Crowd Sensing,” <em>IEEE Transactions on Network Science and Engineering (TNSE)</em>, 2024.</li>
+      <li>Y. Xu, Z. A. Bhuiyan, et al., “C-FDRL: Context-Aware Privacy-Preserving Offloading Through Federated Deep Reinforcement Learning in Cloud-Enabled IoT,” <em>IEEE Transactions on Industrial Informatics (TII)</em>, 2023.</li>
+    </ul>
+  </section>
+</section>
+
+<section class="pdf-about" id="about" aria-labelledby="about-heading">
+  <div class="pdf-shell pdf-about-inner">
+    <h2 id="about-heading">About Me</h2>
+    <div class="about-grid" id="about-grid">
+      <div class="about-text" id="about-text">
+        <h3><i class="fa-solid fa-user-graduate" aria-hidden="true"></i> Short Bio</h3>
+        <p>Dr. Bhuiyan is a Professor of Computer Science (Cybersecurity and Trustworthy AI/ML) at Fordham University, New York, and Director of the DependSys Research Lab, affiliated with the Fordham Center for Cybersecurity. His research focuses on cybersecurity &amp; privacy, trustworthy AI/ML, data-driven dependability, and secure CPS/IoT systems. He has authored over 250 publications with more than 14,500 citations, including journal articles, conference papers, books, and book chapters, in leading venues such as IEEE and ACM transactions. He has served as an Associate Editor for multiple top journals and in leadership roles for major conferences. He has been named a “Highly Cited Researcher” and a “Rising Star of Science.”</p>
+        <button type="button" class="long-bio-toggle" id="long-bio-toggle" aria-expanded="false" aria-controls="long-bio-content">+ View Long Bio</button>
+        <div class="long-bio-content" id="long-bio-content" hidden>
+          <div class="long-bio-shell">
+            <p class="long-bio-kicker">Academic Leadership Profile</p>
+            <div class="long-bio-metrics"><span>250+ Publications</span><span>25+ ESI Highly Cited Papers</span><span>5 ESI Hot Papers</span><span>7 Best Paper Awards</span></div>
+            <div class="long-bio-stream">
+              <article class="bio-node"><h4>Position &amp; Leadership</h4><p>Dr. Bhuiyan is a Professor in the Department of Computer and Information Sciences at Fordham University, New York, USA. He also serves as the Director of the Dependable and Secure Systems Research (DependSys) Lab and is affiliated with the Fordham Center for Cybersecurity. Prior to joining Fordham, he held faculty positions as an Assistant Professor at Fordham University and Temple University, and as an Adjunct Professor at Harvard University.</p></article>
+              <article class="bio-node"><h4>Research &amp; Scholarly Impact</h4><p>His research spans cybersecurity and privacy, trustworthy AI/ML, data-driven system dependability, and emerging CPS/IoT systems. Dr. Bhuiyan has authored and co-authored over 250 publications, including journal and transactions articles, conference papers, 10 book chapters, and 4 books. His work has appeared in leading IEEE/ACM journals and conferences.</p></article>
+              <article class="bio-node"><h4>Editorial Roles &amp; Recognition</h4><p>Dr. Bhuiyan has served as an Associate Editor and Lead Guest Editor for several prominent journals, and has received research, education and service recognitions.</p></article>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="lab-highlight" id="dependsys-card">
+        <h3><i class="fa-solid fa-flask-vial" aria-hidden="true"></i> DependSys Lab</h3>
+        <p>Our lab pioneers solutions in Data-Driven Dependability and Secure Wireless Sensing. We are a collaborative environment of researchers dedicated to high-impact innovations in AI security.</p>
+        <a href="projects.html" class="inline-link">Explore Lab Projects →</a>
+      </div>
     </div>
+  </div>
+</section>
+</main>
 
-    <div id="highlights-modal" class="quick-pubs-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="highlights-title">
-        <div class="quick-pubs-backdrop" data-close-highlights></div>
-        <div class="quick-pubs-panel">
-            <button type="button" class="quick-pubs-close" aria-label="Close" data-close-highlights>&times;</button>
-            <h3 id="highlights-title">Research Highlights</h3>
-            <ul class="quick-pubs-list">
-                <li><strong>100+ SCI journal/transaction papers</strong></li>
-                <li>25+ ESI Highly Cited Papers and 5 Hot Papers in Computer Sciences.</li>
-                <li>80+ JCR Q1 papers and 65+ papers in prestigious IEEE/ACM transactions or magazines.</li>
-                <li><strong>100+ conference papers</strong>, including 30+ top conference papers (SECON, INFOCOM, DSN, SRDS, DCOSS, MASS, ICC, ICCCN, GlobeCom, TrustCom).</li>
-                <li><strong>30+ awards/honors</strong>, including 7 Best Paper awards and IEEE TCSC recognitions.</li>
-                <li><strong>25+ journal editor/guest editor roles</strong> and <strong>50+ conference organization/TPC lead</strong> roles.</li>
-                <li><strong>50+ seminars/panels/keynotes/talks</strong>.</li>
-            </ul>
-        </div>
+<footer class="pdf-footer" aria-label="Footer">
+  <div class="pdf-shell pdf-footer-inner">
+    <div class="pdf-footer-top"><a class="pdf-footer-logo" href="index.html">ZA <span>Bhuiyan</span></a>
+      <div class="pdf-footer-links">
+        <a href="research.html">Research</a><a href="teaching.html">Teaching</a><a href="publications.html">Publications</a><a href="projects.html">Project/Lab</a><a href="join-lab.html">Join the Lab</a><a href="contact.html">Contact</a>
+      </div>
     </div>
-
-<section id="about" class="about section-alt">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid" id="about-grid">
-                <div class="about-text slide-up" id="about-text">
-                    <h3><i class="fa-solid fa-user-graduate"></i> Short Bio</h3>
-                    <p>
-                        Dr. Bhuiyan is a Professor of Computer Science (Cybersecurity and Trustworthy AI/ML) at Fordham University, New York, and Director of the DependSys Research Lab, affiliated with the Fordham Center for Cybersecurity. His research focuses on cybersecurity & privacy, trustworthy AI/ML, data-driven dependability, and secure CPS/IoT systems. He has authored over 250 publications with more than 14,000 citations, including journal articles, conference papers, books, and book chapters, in leading venues such as IEEE and ACM transactions. He has served as an Associate Editor for multiple top journals and in leadership roles for major conferences. He has been named a “Highly Cited Researcher” and a “Rising Star of Science.”
-                    </p>
-                    <button type="button" class="long-bio-toggle" id="long-bio-toggle" aria-expanded="false" aria-controls="long-bio-content">
-                        View Long Bio  
-                    </button>
-                    <div class="long-bio-content" id="long-bio-content" hidden>
-                        <div class="long-bio-shell">
-                            <p class="long-bio-kicker">Academic Leadership Profile</p>
-                            <div class="long-bio-metrics">
-                                <span>250+ Publications</span>
-                                <span>25 ESI Highly Cited Papers</span>
-                                <span>5 ESI Hot Papers</span>
-                                <span>7 Best Paper Awards</span>
-                            </div>
-
-                            <div class="long-bio-stream">
-                                <article class="bio-node">
-                                    <h4>Position & Leadership</h4>
-                                    <p>Dr. Bhuiyan is a tenured Associate Professor in the Department of Computer and Information Sciences at Fordham University, New York, USA. He also serves as the Director of the Dependable and Secure Systems Research (DependSys) Lab and is affiliated with the Fordham Center for Cybersecurity. Prior to joining Fordham, he held faculty positions as an Assistant Professor at Fordham University and Temple University, and as an Adjunct Professor at Harvard University.</p>
-                                </article>
-
-                                <article class="bio-node">
-                                    <h4>Research & Scholarly Impact</h4>
-                                    <p>His research spans cybersecurity and privacy, trustworthy AI/ML, data-driven system dependability, and emerging CPS/IoT systems. Dr. Bhuiyan has authored and co-authored over 250 publications, including journal and transactions articles, conference papers, 10 book chapters, and 4 books. His work has appeared in leading venues such as IEEE TC, TPDS, TII, TDSC, TITS, TSUSC, TETC, IoT-J, ACM ToIT, TCPS, and journals such as JSA, INS, JPDC, and JNCA. He has also published in premier conferences including IEEE INFOCOM, IEEE SECON, IEEE/IFIP DSN, IEEE SRDS, IEEE TrustCom, DCOSS, IEEE MASS, and IEEE DASC.</p>
-                                </article>
-
-                                <article class="bio-node">
-                                    <h4>Editorial Roles & Recognition</h4>
-                                    <p>Dr. Bhuiyan has served as an Associate Editor and Lead Guest Editor for several prominent journals, including IEEE Transactions on Industrial Informatics, ACM Transactions on Multimedia Computing, Communications, and Applications (TOMM), ACM Transactions on Cyber-Physical Systems, IEEE Internet of Things Journal, Future Generation Computer Systems, Journal of Network and Computer Applications, Journal of Parallel and Distributed Computing, and Computer Networks. He has been recognized as a Highly Cited Researcher by Web of Science, named among the Rising Stars of Science, and received the IEEE TCSC Early Career Researcher Award, IEEE Outstanding Leadership Award, and multiple IEEE Service Awards.</p>
-                                </article>
-
-                                <article class="bio-node">
-                                    <h4>Service to the Community</h4>
-                                    <p>He has served in major leadership and organizational roles including General Chair, Program Chair, Workshop Chair, Publicity Chair, Technical Program Committee member, and reviewer for numerous international conferences and journals. His service includes roles in IEEE DASC 2024, INFOCOM AidTSP Workshop, IEEE TrustCom (2023, 2020), IEEE CSCloud 2022, IEEE iSCI 2021, and IEEE DependSys 2020.</p>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="lab-highlight slide-up" id="dependsys-card">
-                    <h3><i class="fa-solid fa-flask-vial"></i> DependSys Lab</h3>
-                    <p>
-                        Our lab pioneers solutions in Data-Driven Dependability and Secure Wireless Sensing. We are a
-                        collaborative environment of researchers dedicated to high-impact innovations in AI security.
-                    </p>
-                    <a href="projects.html" class="inline-link">Explore Lab Projects &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="site-footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <a href="index.html" class="footer-logo">ZM <span>Bhuiyan</span></a>
-                <p>Professor of Computer Science at Fordham University, advancing trustworthy AI, cybersecurity, wireless sensing, and resilient IoT/CPS systems.</p>
-            </div>
-            <div class="footer-links">
-                <a href="research.html">Research</a>
-                <a href="publications.html">Publications</a>
-                <a href="teaching.html">Teaching</a>
-                <a href="projects.html">Project/Lab</a>
-                <a href="join-lab.html">Join the Lab</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-focus">
-                <span>Trustworthy AI/ML</span>
-                <span>Cybersecurity</span>
-                <span>IoT/CPS Security</span>
-                <span>Wireless Sensing</span>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Professor Zakirul Alam Bhuiyan. All rights reserved.</p>
-                <a href="mailto:md@fordham.edu">md@fordham.edu</a>
-            </div>
-        </div>
-    </footer>
-    <script src="publications-data.js"></script>
-<script src="script.js"></script>
-<script src="publications.js"></script>
+    <p>© 2026 Professor Zakirul Alam Bhuiyan. All rights reserved.</p>
+  </div>
+</footer>
+<script src="js/script.js"></script>
+<script src="js/homepage.js"></script>
 </body>
-
 </html>
