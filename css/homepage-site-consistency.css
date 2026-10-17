@@ -1,0 +1,355 @@
+/* Homepage refinement — use the site's established typography, spacing,
+   navigation and animated background without changing any of the other pages.
+   The PDF content / section order remain in homepage-pdf.css. */
+html { scroll-padding-top: 88px; }
+body.homepage-pdf {
+  background: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.55;
+}
+/* Original background is the shared particle canvas, not the PDF's stripe texture. */
+body.homepage-pdf #bg-canvas { display: block !important; opacity: .32; }
+body.homepage-pdf::before, body.homepage-pdf::after { display: revert !important; }
+
+/* Match research.html, publications.html and the other existing pages exactly. */
+body.homepage-pdf #navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: 0;
+  padding: 1rem 0;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 0;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: none;
+  z-index: 1000;
+}
+body.homepage-pdf #navbar .nav-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  min-height: 0;
+}
+body.homepage-pdf #navbar .logo {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  letter-spacing: normal;
+  font-weight: 800;
+  color: var(--text-main);
+}
+body.homepage-pdf #navbar .logo span { color: var(--acc-color); }
+body.homepage-pdf #navbar .nav-links {
+  position: static;
+  inset: auto;
+  width: auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.25rem;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  text-align: left;
+}
+body.homepage-pdf #navbar .nav-links li a {
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--text-sec);
+  padding: 0;
+  display: inline-block;
+}
+body.homepage-pdf #navbar .nav-links li a.active,
+body.homepage-pdf #navbar .nav-links li a[aria-current="page"],
+body.homepage-pdf #navbar .nav-links li a:hover { color: var(--acc-color); }
+body.homepage-pdf #navbar .nav-links li a.active::after { background: var(--acc-color); bottom: -5px; }
+body.homepage-pdf #navbar .nav-controls { margin-left: 0; gap: .8rem; }
+body.homepage-pdf #navbar .theme-toggle {
+  /* The shared theme-toggle look and dimensions. */
+  width: 40px;
+  height: 40px;
+  background: var(--glass-bg);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+}
+body.homepage-pdf #navbar .theme-toggle svg { width: 18px; height: 18px; }
+body.homepage-pdf #navbar .mobile-menu-btn { display: none; }
+
+/* The shared page width / gutters, also used by navigation on other pages. */
+body.homepage-pdf .pdf-shell {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+body.homepage-pdf .pdf-hero {
+  width: 100%;
+  margin: 0;
+  padding: 100px 0 16px;
+  min-height: 0;
+  background: transparent;
+  border-bottom: 0;
+}
+body.homepage-pdf .pdf-hero-inner {
+  grid-template-columns: minmax(0, 1fr) 280px;
+  align-items: center;
+  gap: 2rem;
+}
+body.homepage-pdf .pdf-hero-copy h1 {
+  font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: normal;
+  margin: 0 0 .65rem;
+  color: var(--text-main);
+}
+body.homepage-pdf .pdf-hero-copy h1 span { font-size: .55em; font-weight: 600; color: var(--text-sec); }
+body.homepage-pdf .pdf-role {
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--acc-color);
+  margin-bottom: .2rem;
+}
+body.homepage-pdf .pdf-affiliation {
+  font-size: .94rem;
+  line-height: 1.55;
+  color: var(--text-main);
+  margin-bottom: .75rem;
+}
+body.homepage-pdf .pdf-role i,
+body.homepage-pdf .pdf-affiliation i { color: var(--acc-color); margin-right: .35rem; width: auto; }
+body.homepage-pdf .pdf-research-focus {
+  margin: 0 0 .6rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 700;
+}
+body.homepage-pdf .pdf-research-summary {
+  /* The red rectangle was a markup annotation, not site decoration. */
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  font-size: .98rem;
+  line-height: 1.55;
+  font-weight: 400;
+  color: var(--text-sec);
+}
+body.homepage-pdf .pdf-profile-portrait {
+  width: 280px;
+  height: 280px;
+  border-radius: 18px;
+  border: 5px solid var(--photo-frame);
+}
+body.homepage-pdf .pdf-link-row { padding: 10px 2rem 18px; min-height: 0; gap: 14px; }
+body.homepage-pdf .pdf-profile-links { gap: 7px; }
+body.homepage-pdf .pdf-profile-links a {
+  font-size: .78rem;
+  padding: 6px 9px;
+  min-height: 34px;
+  border-radius: 6px;
+}
+body.homepage-pdf .pdf-open-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 39px;
+  padding: 9px 13px;
+  font-size: .85rem;
+  line-height: 1.2;
+  background: #b9dcf4;
+  color: #10172b;
+  border: 2px solid #ffe348;
+  border-radius: 6px;
+  font-weight: 800;
+  text-decoration: none;
+  animation: research-position-glow 2s ease-in-out infinite;
+  will-change: box-shadow, filter;
+}
+@keyframes research-position-glow {
+  0%,100% { box-shadow: 0 0 0 1px rgba(255,220,64,.45), 0 0 9px 2px rgba(255,219,48,.55); filter: brightness(1); }
+  50% { box-shadow: 0 0 0 4px rgba(255,222,71,.16), 0 0 20px 6px rgba(255,219,48,.88); filter: brightness(1.12); }
+}
+body.homepage-pdf .pdf-open-link:hover { background:#e9f6ff; color:#071827; }
+body.homepage-pdf .pdf-open-link:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+
+/* Restore the site's default readable type scale and vertical rhythm. */
+body.homepage-pdf .pdf-content { padding-top: .4rem; padding-bottom: 2.5rem; }
+body.homepage-pdf .pdf-highlight-title { font-size: clamp(1.6rem, 2.5vw, 2.15rem); line-height: 1.35; margin-bottom: .75rem; }
+body.homepage-pdf .pdf-section-heading { font-size: 1.12rem; line-height: 1.4; margin-bottom: .55rem; }
+body.homepage-pdf .pdf-data-block { margin-bottom: 1.05rem; }
+body.homepage-pdf .pdf-data-block li { font-size: .95rem; line-height: 1.55; margin-bottom: .35rem; }
+body.homepage-pdf .pdf-awards li { margin-bottom: .42rem; }
+body.homepage-pdf .pdf-stat-grid { margin: .55rem 0 1rem; }
+body.homepage-pdf .pdf-stat-row { align-items: stretch; }
+body.homepage-pdf .pdf-stat { padding: 10px 6px 8px; min-height: 74px; }
+body.homepage-pdf .pdf-stat strong { font-size: 1.02rem; }
+body.homepage-pdf .pdf-stat span { font-size: .74rem; line-height: 1.25; }
+body.homepage-pdf .pdf-two-column { grid-template-columns: minmax(0, 1fr) minmax(260px, 305px); column-gap: 24px; }
+body.homepage-pdf .pdf-sidebar { padding-top: 135px; }
+body.homepage-pdf .pdf-side-card h3 { font-size: 1.03rem; }
+body.homepage-pdf .pdf-side-card li { font-size: .92rem; line-height: 1.55; }
+body.homepage-pdf .pdf-side-card { padding-bottom: 16px; }
+body.homepage-pdf .pdf-publications { padding-top: 1.1rem; }
+body.homepage-pdf .pdf-publications .pdf-highlight-title { font-size: clamp(1.55rem, 2.4vw, 2.05rem); margin-bottom: .75rem; }
+body.homepage-pdf .pdf-publications ul { padding-left: 2rem; }
+body.homepage-pdf .pdf-publications li { font-size: .95rem; line-height: 1.55; margin-bottom: .45rem; }
+
+/* About and footer use the same site surface colors and gutters. */
+body.homepage-pdf .pdf-about {
+  width: 100%;
+  margin: 0;
+  padding: 28px 0 !important;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+body.homepage-pdf .pdf-about-inner, body.homepage-pdf .pdf-footer-inner {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+body.homepage-pdf .pdf-about h2 { font-size: clamp(1.65rem, 2.5vw, 2.15rem); margin-bottom: 1.2rem; color:var(--text-main); }
+body.homepage-pdf .about-grid { gap: 1.2rem; }
+body.homepage-pdf .about-text, body.homepage-pdf .lab-highlight {
+  background: var(--glass-bg);
+  border: 1px solid var(--card-outline);
+  border-radius: 12px;
+  padding: 1.15rem;
+  min-height: 0;
+}
+body.homepage-pdf .about-text h3, body.homepage-pdf .lab-highlight h3 { font-size: 1.2rem; margin-bottom: .7rem; color:var(--text-main); }
+body.homepage-pdf .about-text p, body.homepage-pdf .lab-highlight p { font-size: .95rem; line-height: 1.55; margin-bottom: .7rem; color:var(--text-sec); }
+body.homepage-pdf .long-bio-toggle { font-size: .85rem; padding: .55rem .8rem; }
+body.homepage-pdf .lab-highlight .inline-link { font-size: .9rem; }
+body.homepage-pdf .long-bio-stream .bio-node h4 { font-size: 1.05rem; }
+body.homepage-pdf .long-bio-stream .bio-node p { font-size: .95rem; }
+body.homepage-pdf .pdf-footer {
+  width: 100%;
+  margin: 0;
+  padding: 24px 0 16px;
+  background: var(--bg-alt);
+  min-height: 0;
+}
+body.homepage-pdf .pdf-footer-top { gap: 1.4rem; margin-bottom: .8rem; }
+body.homepage-pdf .pdf-footer-logo { font-size: 1.25rem; }
+body.homepage-pdf .pdf-footer-links { gap: 1.25rem; }
+body.homepage-pdf .pdf-footer-links a, body.homepage-pdf .pdf-footer p { font-size: .85rem; }
+
+/* In light mode, keep the same palette as every other page. */
+html[data-theme="light"] body.homepage-pdf { background: var(--bg-color); }
+html[data-theme="light"] body.homepage-pdf #navbar { background: var(--glass-bg); }
+html[data-theme="light"] body.homepage-pdf .pdf-hero { background: transparent; }
+html[data-theme="light"] body.homepage-pdf .pdf-about,
+html[data-theme="light"] body.homepage-pdf .pdf-footer { background: var(--bg-alt); }
+html[data-theme="light"] body.homepage-pdf .pdf-hero-copy h1,
+html[data-theme="light"] body.homepage-pdf .pdf-affiliation,
+html[data-theme="light"] body.homepage-pdf .pdf-about h2 { color: var(--text-main); }
+html[data-theme="light"] body.homepage-pdf .pdf-hero-copy h1 span,
+html[data-theme="light"] body.homepage-pdf .pdf-research-summary,
+html[data-theme="light"] body.homepage-pdf .about-text p,
+html[data-theme="light"] body.homepage-pdf .lab-highlight p { color: var(--text-sec); }
+html[data-theme="light"] body.homepage-pdf .about-text,
+html[data-theme="light"] body.homepage-pdf .lab-highlight { background: var(--glass-bg); border-color: var(--card-outline); }
+html[data-theme="light"] body.homepage-pdf .pdf-nav-content .nav-links li a { color: var(--text-sec); }
+html[data-theme="light"] body.homepage-pdf #navbar .logo { color: var(--text-main); }
+html[data-theme="light"] body.homepage-pdf #navbar .nav-links li a.active { color: var(--acc-color); }
+
+/* The navbar collapses at the same 1100px breakpoint as all other pages. */
+@media (max-width: 1100px) {
+  body.homepage-pdf #navbar .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: auto;
+    display: none;
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+    background: var(--bg-color);
+    border: 0;
+    border-bottom: 1px solid var(--card-outline);
+    box-shadow: 0 15px 25px #0005;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: .7rem;
+  }
+  body.homepage-pdf #navbar .nav-links.active { display: flex; }
+  body.homepage-pdf #navbar .nav-links li a { font-size: .9rem; display: block; padding: .25rem; }
+  body.homepage-pdf #navbar .nav-controls { margin-left: auto; }
+  body.homepage-pdf #navbar .mobile-menu-btn { display: block; width: 34px; height: 36px; }
+}
+@media (max-width: 920px) {
+  body.homepage-pdf .pdf-hero-inner { grid-template-columns: minmax(0,1fr) 240px; gap: 1.2rem; }
+  body.homepage-pdf .pdf-profile-portrait { width: 240px; height: 240px; }
+  body.homepage-pdf .pdf-stat-row-top, body.homepage-pdf .pdf-stat-row-bottom { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  body.homepage-pdf .pdf-two-column { grid-template-columns: minmax(0,1fr) minmax(235px, 270px); gap: 16px; }
+  body.homepage-pdf .pdf-sidebar { padding-top: 145px; }
+  body.homepage-pdf .pdf-profile-links a { font-size: .75rem; }
+}
+@media (max-width: 700px) {
+  body.homepage-pdf #navbar { width: 100%; margin: 0; }
+  body.homepage-pdf #navbar .nav-container,
+  body.homepage-pdf .pdf-shell,
+  body.homepage-pdf .pdf-about-inner,
+  body.homepage-pdf .pdf-footer-inner { width: 100%; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+  body.homepage-pdf .pdf-hero { width: 100%; margin: 0; padding: 95px 0 18px; }
+  body.homepage-pdf .pdf-hero-inner { grid-template-columns: 1fr; gap: 1rem; }
+  body.homepage-pdf .pdf-profile-portrait { grid-row: 1; width: 180px; height: 180px; }
+  body.homepage-pdf .pdf-hero-copy h1 { font-size: 1.7rem; }
+  body.homepage-pdf .pdf-role { font-size: 1rem; }
+  body.homepage-pdf .pdf-affiliation { font-size: .94rem; }
+  body.homepage-pdf .pdf-research-focus { font-size: .98rem; }
+  body.homepage-pdf .pdf-research-summary { font-size: .98rem; line-height: 1.55; }
+  body.homepage-pdf .pdf-link-row { padding-top: .75rem; padding-bottom: 1rem; }
+  body.homepage-pdf .pdf-profile-links { justify-content: center; }
+  body.homepage-pdf .pdf-profile-links a { font-size: .78rem; }
+  body.homepage-pdf .pdf-open-link { font-size: .85rem; }
+  body.homepage-pdf .pdf-highlight-title { font-size: 1.75rem; }
+  body.homepage-pdf .pdf-two-column { grid-template-columns: 1fr; }
+  body.homepage-pdf .pdf-section-heading { font-size: 1.08rem; }
+  body.homepage-pdf .pdf-data-block li { font-size: .95rem; line-height: 1.55; }
+  body.homepage-pdf .pdf-stat-row-top, body.homepage-pdf .pdf-stat-row-bottom { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  body.homepage-pdf .pdf-stat { min-height: 68px; }
+  body.homepage-pdf .pdf-stat strong { font-size: 1rem; }
+  body.homepage-pdf .pdf-stat span { font-size: .72rem; }
+  body.homepage-pdf .pdf-sidebar { padding-top: 0; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+  body.homepage-pdf .pdf-side-card li { font-size: .9rem; }
+  body.homepage-pdf .pdf-publications { padding-top: 1.5rem; }
+  body.homepage-pdf .pdf-publications li { font-size: .95rem; line-height: 1.55; }
+  body.homepage-pdf .pdf-about { width: 100%; margin: 0; padding: 24px 0 !important; }
+  body.homepage-pdf .pdf-footer { width: 100%; margin: 0; }
+  body.homepage-pdf .about-grid { grid-template-columns: 1fr; }
+  body.homepage-pdf .pdf-footer-links a { font-size: .85rem; }
+}
+@media (max-width: 480px) {
+  body.homepage-pdf .pdf-hero-copy h1 { font-size: 1.65rem; }
+  body.homepage-pdf .pdf-hero-copy h1 span { display: block; font-size: .58em; white-space: normal; }
+  body.homepage-pdf .pdf-stat-row-top, body.homepage-pdf .pdf-stat-row-bottom { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body.homepage-pdf .pdf-sidebar { grid-template-columns: 1fr; }
+  body.homepage-pdf .pdf-side-card li { font-size: .95rem; }
+  body.homepage-pdf .pdf-stat { min-height: 64px; }
+  body.homepage-pdf .pdf-footer-links a { font-size: .82rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.homepage-pdf .pdf-open-link { animation: none; box-shadow: 0 0 0 2px rgba(255,219,48,.5), 0 0 13px 3px rgba(255,219,48,.65); }
+}

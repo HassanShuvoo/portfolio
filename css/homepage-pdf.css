@@ -1,0 +1,274 @@
+/* PDF-matched homepage, isolated from the CSS of the other existing pages. */
+html {scroll-padding-top: 62px;}
+body.homepage-pdf {
+  --pdf-main: #f2f4fc;
+  --pdf-muted: #cbd0df;
+  --pdf-accent: #7fc5f6;
+  --pdf-green: #65c76d;
+  --pdf-panel: #14192c;
+  color: var(--pdf-main);
+  background: repeating-linear-gradient(to bottom,
+    #071521 0, #123451 95px, #0b1d2e 190px,
+    #08131d 270px, #113453 375px, #0b2133 460px,
+    #071521 550px);
+  line-height: 1.44;
+}
+body.homepage-pdf #bg-canvas,
+body.homepage-pdf .bg-3d-scene {display:none !important;}
+body.homepage-pdf::before,body.homepage-pdf::after {display:none !important;}
+body.homepage-pdf section {padding:0;}
+body.homepage-pdf .pdf-shell {
+  width: calc(100% - 120px);
+  max-width: 1260px;
+  margin-left: clamp(24px, 9.15vw, 132px);
+  margin-right:24px;
+  padding:0;
+}
+body.homepage-pdf a {transition:color .2s,background .2s,border-color .2s;}
+body.homepage-pdf a:hover {filter:none;}
+body.homepage-pdf #navbar {
+  position:relative;
+  top:auto;
+  width:calc(100% - 40px);
+  margin:70px 20px 0;
+  background:#111426;
+  border:0;
+  box-shadow:none;
+  backdrop-filter:none;
+  z-index:90;
+}
+body.homepage-pdf .pdf-nav-content {
+  min-height:40px;
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+body.homepage-pdf .logo {white-space:nowrap;font-family:Outfit,sans-serif;font-size:17px;font-weight:800;color:#fff;letter-spacing:-.3px;}
+body.homepage-pdf .logo span, body.homepage-pdf .pdf-footer-logo span {color:var(--pdf-accent);}
+body.homepage-pdf .nav-links {position:static;top:auto;left:auto;right:auto;width:auto;min-width:0;margin:0 0 0 auto;padding:0;border:0;background:none;box-shadow:none;display:flex;flex-direction:row;text-align:left;align-items:center;gap:15px;list-style:none;}
+body.homepage-pdf .nav-links li a {color:#d2d1dd;white-space:nowrap;font-size:10.7px;font-weight:500;padding:6px 0;display:inline-block;position:relative;}
+body.homepage-pdf .nav-links li a.active,
+body.homepage-pdf .nav-links li a[aria-current="page"],
+body.homepage-pdf .nav-links li a:hover {color:#74c9f9;}
+body.homepage-pdf .nav-links li a.active::after {content:"";height:2px;background:#6fc7fc;position:absolute;bottom:1px;left:0;right:0;}
+body.homepage-pdf .nav-controls {margin-left:auto;display:flex;align-items:center;gap:9px;}
+body.homepage-pdf .theme-toggle {width:31px;height:28px;border:1px solid #29334c;border-radius:30px;background:#161d32;color:#d6e2f4;display:flex;align-items:center;justify-content:center;}
+body.homepage-pdf .theme-toggle svg {width:15px;height:15px;}
+body.homepage-pdf .mobile-menu-btn {display:none;border:0;background:none;width:34px;height:32px;padding:6px;align-items:center;justify-content:center;}
+body.homepage-pdf .mobile-menu-btn .bar {height:2px;min-height:2px;width:22px;background:#e6f2ff;border-radius:3px;display:block;margin:3px 0;}
+
+/* Header screenshot: copy on the left, portrait on the right, green research band. */
+body.homepage-pdf .pdf-hero {
+  position:relative;
+  width:calc(100% - 40px);
+  margin:0 20px;
+  padding:14px 0 8px;
+  min-height:195px;
+  background:linear-gradient(110deg,rgba(22,54,79,.89),rgba(13,19,39,.96) 52%,rgba(14,17,32,.96));
+  border-bottom:1px solid #344663;
+}
+body.homepage-pdf .pdf-hero-inner {display:grid;grid-template-columns:minmax(0,1fr) 204px;align-items:center;gap:14px;}
+body.homepage-pdf .pdf-hero-copy {min-width:0;}
+body.homepage-pdf .pdf-hero-copy h1 {font-family:Outfit,Inter,sans-serif;font-size:clamp(21px,2.15vw,32px);line-height:1.16;margin:0 0 7px;font-weight:800;letter-spacing:-.45px;color:#f7f7fc;}
+body.homepage-pdf .pdf-hero-copy h1 span {font-size:.56em;font-style:italic;letter-spacing:0;white-space:nowrap;font-weight:700;color:#d9dae4;}
+body.homepage-pdf .pdf-role,body.homepage-pdf .pdf-affiliation {font-size:11px;line-height:1.65;font-weight:600;margin:0;}
+body.homepage-pdf .pdf-role {color:#6ebcfc;}
+body.homepage-pdf .pdf-affiliation {color:#d1d9e3;font-weight:500;}
+body.homepage-pdf .pdf-role i,body.homepage-pdf .pdf-affiliation i {display:inline-block;width:17px;color:#66bbed;text-align:left;}
+body.homepage-pdf .pdf-research-focus {margin:9px 0 5px;font-size:11.9px;font-weight:800;line-height:1.5;display:table;max-width:100%;color:#040d08;background:#3bf838;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 2px;}
+body.homepage-pdf .pdf-research-focus b {font-weight:900;}
+body.homepage-pdf .pdf-research-summary {margin:0;color:#bfc7d5;font-size:10.7px;line-height:1.35;border:2px solid #c31e3b;border-radius:14px;padding:5px 15px;max-width:100%;}
+body.homepage-pdf .pdf-profile-portrait {height:165px;width:204px;border:5px solid #1b263b;border-radius:18px;overflow:hidden;box-shadow:0 8px 28px #0009;align-self:center;}
+body.homepage-pdf .pdf-profile-portrait img {display:block;width:100%;height:100%;object-fit:cover;object-position:center 43%;}
+
+body.homepage-pdf .pdf-link-row {display:flex;justify-content:flex-end;align-items:center;gap:14px;flex-wrap:wrap;min-height:35px;padding:6px 0 2px;}
+body.homepage-pdf .pdf-profile-links {display:flex;align-items:center;justify-content:flex-end;gap:4px;flex-wrap:wrap;}
+body.homepage-pdf .pdf-profile-links a {display:inline-flex;align-items:center;gap:4px;white-space:nowrap;min-height:25px;padding:3px 6px;border:1px solid #719fc1;border-radius:3px;background:#12192b;font-size:10px;color:#9cc7ed;font-weight:500;}
+body.homepage-pdf .pdf-profile-links a:hover {background:#24415c;color:white;}
+body.homepage-pdf .pdf-profile-links a.pdf-contact-link {background:#d7eafd;border-color:#5a91ba;color:#09233b;font-weight:700;}
+body.homepage-pdf .pdf-open-link {white-space:nowrap;color:#11141f;font-size:10.5px;line-height:1.2;font-weight:800;background:#b9dcf4;border:3px solid #e9d71c;box-shadow:0 0 0 2px #1e314c;padding:5px 9px;}
+body.homepage-pdf .pdf-open-link:hover {background:#e7f6ff;color:#071827;}
+
+/* Academic accomplishments and sidebar */
+body.homepage-pdf .pdf-content {padding-top:1px;padding-bottom:30px;}
+body.homepage-pdf .pdf-highlight-title {font-family:Outfit,Inter,sans-serif;font-size:20px;line-height:1.35;margin:0 0 2px;color:#0a1e09;font-weight:800;}
+body.homepage-pdf .pdf-highlight-title span {display:inline;background:#32fa31;padding:0 2px;box-decoration-break:clone;-webkit-box-decoration-break:clone;}
+body.homepage-pdf .pdf-two-column {display:grid;grid-template-columns:minmax(0, 1fr) minmax(245px, 310px);column-gap:16px;align-items:start;}
+body.homepage-pdf .pdf-primary-column {min-width:0;}
+body.homepage-pdf .pdf-data-block {margin:0 0 6px;padding:0;}
+body.homepage-pdf .pdf-section-heading {font-family:Inter,sans-serif;font-size:14px;font-weight:800;line-height:1.4;color:#a3dc93;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;margin:0 0 5px 16px;padding:0;}
+body.homepage-pdf .pdf-section-heading::before {content:'➢';color:#b6cfdd;display:inline-block;width:18px;margin-left:-18px;text-decoration:none;}
+body.homepage-pdf .pdf-stat-grid {display:flex;flex-direction:column;gap:0;padding:0 0 0 29px;margin:3px 0 9px;}
+body.homepage-pdf .pdf-stat-row {display:grid;gap:0;}
+body.homepage-pdf .pdf-stat-row-top {grid-template-columns:repeat(6,minmax(0,1fr));}
+body.homepage-pdf .pdf-stat-row-bottom {grid-template-columns:repeat(5,minmax(0,1fr));}
+body.homepage-pdf .pdf-stat {border:1px solid #a5a9a2;background:#fff0ad;color:#181b24;min-width:0;text-align:center;padding:4px 3px 3px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:40px;}
+body.homepage-pdf .pdf-stat strong {font-family:Inter,sans-serif;font-size:14px;line-height:1.1;font-weight:800;color:#c52113;}
+body.homepage-pdf .pdf-stat span {font-family:Inter,sans-serif;font-size:10px;line-height:1.17;font-weight:800;color:#141b25;white-space:normal;}
+body.homepage-pdf .pdf-hollow-list {list-style:circle; padding-left:30px;margin:0;}
+body.homepage-pdf .pdf-data-block li {font-size:11px;line-height:1.35;color:#e4e4e7;margin:0 0 3px;}
+body.homepage-pdf .pdf-data-block strong {font-weight:800;}
+body.homepage-pdf .pdf-venues {margin-bottom:9px;}
+body.homepage-pdf .pdf-awards {margin-bottom:8px;}
+body.homepage-pdf .pdf-awards li {margin:0 0 5px;}
+body.homepage-pdf .pdf-data-block em {color:#58c86b;font-style:normal;}
+body.homepage-pdf .pdf-section-heading mark {background:#fff012;color:#d92b1c;padding:1px;}
+body.homepage-pdf .pdf-leadership {margin-bottom:12px;}
+body.homepage-pdf .pdf-disc-list {list-style:disc;padding-left:30px;margin:0;}
+body.homepage-pdf .pdf-sidebar {min-width:0;padding-top:105px;}
+body.homepage-pdf .pdf-side-card {background:#16627d;color:white;box-shadow:0 4px 10px #0004;margin-bottom:18px;padding:0 15px 23px;}
+body.homepage-pdf .pdf-side-card h3 {color:#dc4042;text-align:center;font-size:15px;font-family:Inter,sans-serif;font-weight:800;margin:0 -15px 9px;padding:7px 6px;background:#1e7699;line-height:1.25;}
+body.homepage-pdf .pdf-side-card ul {padding-left:6px;list-style:none;margin:0;}
+body.homepage-pdf .pdf-side-card li {font-size:13px;font-weight:700;color:#f7f7fa;line-height:1.61;padding-left:8px;position:relative;margin:0 0 6px;}
+body.homepage-pdf .pdf-side-card li::before {content:'•';position:absolute;left:0;top:0;color:white;}
+body.homepage-pdf .pdf-side-card span {color:#35bf69;}
+body.homepage-pdf .pdf-side-card a {color:#86eb9d;text-decoration:underline;font-weight:800;}
+body.homepage-pdf .pdf-open-positions {padding-bottom:24px;}
+body.homepage-pdf .pdf-open-positions h3 {margin-bottom:6px;}
+body.homepage-pdf .pdf-open-positions li {margin-bottom:16px;}
+
+/* The publication list is full width in the source screenshot. */
+body.homepage-pdf .pdf-publications {padding:2px 0 0;}
+body.homepage-pdf .pdf-publications .pdf-highlight-title {font-size:19px;margin-bottom:9px;}
+body.homepage-pdf .pdf-publications ul {padding-left:51px;margin:0;}
+body.homepage-pdf .pdf-publications li {font-size:12.2px;line-height:1.38;color:#e6e5ec;margin-bottom:6px;}
+body.homepage-pdf .pdf-publications li em {font-style:italic;color:#58c676;}
+
+/* Bottom two cards from page three of the PDF. */
+body.homepage-pdf .pdf-about {width:calc(100% - 78px);margin:0 39px;background:#111528;padding:12px 0 12px !important;}
+body.homepage-pdf .pdf-about-inner {max-width:none;width:calc(100% - 120px);margin-left:96px;margin-right:24px;}
+body.homepage-pdf .pdf-about h2 {font-family:Outfit,Inter,sans-serif;font-size:23px;font-weight:800;line-height:1.2;margin:0 0 14px;color:#f4f5fc;position:relative;}
+body.homepage-pdf .pdf-about h2::after {content:"";width:44px;height:3px;background:#70cff3;position:absolute;bottom:-7px;left:0;}
+body.homepage-pdf .about-grid {display:grid;grid-template-columns:minmax(0,1.8fr) minmax(230px,1fr);gap:14px;align-items:start;}
+body.homepage-pdf .about-text,body.homepage-pdf .lab-highlight {background:#151c30;border:1px solid #3f506b;border-radius:9px;padding:12px 13px;min-height:150px;}
+body.homepage-pdf .about-text h3,body.homepage-pdf .lab-highlight h3 {color:#f2f3fb;font-size:14px;font-family:Outfit,Inter,sans-serif;margin:0 0 9px;}
+body.homepage-pdf .about-text h3 i,body.homepage-pdf .lab-highlight h3 i {color:#79bff3;margin-right:5px;}
+body.homepage-pdf .about-text p,body.homepage-pdf .lab-highlight p {color:#c5cbda;font-size:11.1px;line-height:1.48;margin:0 0 12px;}
+body.homepage-pdf .long-bio-toggle {color:#d4e9fa;background:#1b2c45;border:1px solid #2f435a;border-radius:16px;font-size:10px;font-weight:700;padding:5px 12px;}
+body.homepage-pdf .lab-highlight .inline-link {font-size:11px;font-weight:700;color:#74bdfa;}
+body.homepage-pdf .long-bio-content[hidden] {display:none!important;}
+body.homepage-pdf .about-grid.long-bio-expanded {grid-template-columns:1fr;}
+body.homepage-pdf .long-bio-content {color:#dce6f5;}
+body.homepage-pdf .long-bio-stream .bio-node {padding:8px;}
+body.homepage-pdf .long-bio-stream .bio-node h4 {font-size:13px;}
+body.homepage-pdf .long-bio-stream .bio-node p {font-size:11px;}
+body.homepage-pdf .pdf-footer {width:calc(100% - 78px);margin:0 39px 38px;padding:8px 0 13px;background:#0e1221;min-height:57px;}
+body.homepage-pdf .pdf-footer-inner {width:calc(100% - 120px);max-width:none;margin-left:80px;margin-right:40px;}
+body.homepage-pdf .pdf-footer-top {display:flex;align-items:center;gap:32px;flex-wrap:wrap;margin-bottom:8px;}
+body.homepage-pdf .pdf-footer-logo {white-space:nowrap;color:#fff;font-weight:800;font-family:Outfit,sans-serif;font-size:16px;}
+body.homepage-pdf .pdf-footer-links {display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+body.homepage-pdf .pdf-footer-links a {font-size:10.5px;color:#c5ccdb;}
+body.homepage-pdf .pdf-footer-links a:hover {color:#8dd9ff;}
+body.homepage-pdf .pdf-footer p {color:#b4bac8;font-size:10px;margin:0;}
+
+/* Alternate theme should remain functional even though the reference is dark. */
+html[data-theme="light"] body.homepage-pdf {
+  --pdf-main:#132237;
+  --pdf-muted:#37516c;
+  --pdf-panel:#fff;
+  background:repeating-linear-gradient(to bottom,#d7e9f6 0,#f3f8fc 210px,#dcecf8 420px,#f9fbfe 600px);
+}
+html[data-theme="light"] body.homepage-pdf #navbar,
+html[data-theme="light"] body.homepage-pdf .pdf-about,
+html[data-theme="light"] body.homepage-pdf .pdf-footer {background:#e2effa;}
+html[data-theme="light"] body.homepage-pdf .pdf-hero {background:linear-gradient(115deg,#e1effb,#f8fbfd);}
+html[data-theme="light"] body.homepage-pdf .pdf-hero-copy h1,
+html[data-theme="light"] body.homepage-pdf .pdf-hero-copy h1 span,
+html[data-theme="light"] body.homepage-pdf .pdf-affiliation,
+html[data-theme="light"] body.homepage-pdf .pdf-footer-logo,
+html[data-theme="light"] body.homepage-pdf .pdf-about h2,
+html[data-theme="light"] body.homepage-pdf .logo {color:#102b44;}
+html[data-theme="light"] body.homepage-pdf .pdf-research-summary,
+html[data-theme="light"] body.homepage-pdf .pdf-data-block li,
+html[data-theme="light"] body.homepage-pdf .pdf-publications li,
+html[data-theme="light"] body.homepage-pdf .pdf-footer p {color:#29415c;}
+html[data-theme="light"] body.homepage-pdf .about-text,
+html[data-theme="light"] body.homepage-pdf .lab-highlight {background:#f9fcff;border-color:#b5c9d9;}
+html[data-theme="light"] body.homepage-pdf .about-text h3,
+html[data-theme="light"] body.homepage-pdf .lab-highlight h3 {color:#173455;}
+html[data-theme="light"] body.homepage-pdf .about-text p,
+html[data-theme="light"] body.homepage-pdf .lab-highlight p {color:#3a506b;}
+html[data-theme="light"] body.homepage-pdf .pdf-nav-content .nav-links li a {color:#28445c;}
+html[data-theme="light"] body.homepage-pdf .pdf-footer-links a {color:#28445c;}
+
+/* Tablet and mobile: retain all content, but rearrange for legibility. */
+@media(max-width:1180px){
+  body.homepage-pdf .nav-links {gap:11px;}
+  body.homepage-pdf .nav-links li a {font-size:10px;}
+  body.homepage-pdf .pdf-hero-inner {grid-template-columns:minmax(0,1fr) 195px;}
+  body.homepage-pdf .pdf-profile-portrait {width:195px;}
+}
+@media(max-width:1050px){
+  body.homepage-pdf .pdf-nav-content {gap:12px;}
+  body.homepage-pdf .nav-links {gap:10px;}
+  body.homepage-pdf .pdf-link-row {gap:9px;}
+  body.homepage-pdf .pdf-profile-links a {font-size:9px;}
+  body.homepage-pdf .pdf-open-link {font-size:9px;}
+}
+@media(max-width:920px){
+  body.homepage-pdf .pdf-shell {width:calc(100% - 56px);margin-left:28px;margin-right:28px;}
+  body.homepage-pdf #navbar {margin-top:16px;}
+  body.homepage-pdf .pdf-nav-content {width:calc(100% - 30px);margin:0 15px;}
+  body.homepage-pdf .nav-links {display:none;position:absolute;top:100%;left:0;right:0;width:100%;margin:0;padding:14px 22px;background:#111b30;border:1px solid #274769;flex-direction:column;gap:0;align-items:stretch;text-align:left;box-shadow:0 12px 25px #0008;}
+  body.homepage-pdf .nav-links.active {display:flex;}
+  body.homepage-pdf .nav-links li a {font-size:14px;padding:9px 5px;display:block;}
+  body.homepage-pdf .nav-controls {margin-left:auto;}
+  body.homepage-pdf .mobile-menu-btn {display:block;}
+  body.homepage-pdf .pdf-hero {padding:22px 0;}
+  body.homepage-pdf .pdf-hero-inner {grid-template-columns:minmax(0,1fr) 184px;gap:20px;}
+  body.homepage-pdf .pdf-profile-portrait {width:184px;height:184px;}
+  body.homepage-pdf .pdf-research-focus {font-size:11px;}
+  body.homepage-pdf .pdf-two-column {grid-template-columns:minmax(0, 1fr) 250px;gap:13px;}
+  body.homepage-pdf .pdf-stat-row-top,body.homepage-pdf .pdf-stat-row-bottom {grid-template-columns:repeat(3,minmax(0,1fr));}
+  body.homepage-pdf .pdf-sidebar {padding-top:105px;}
+  body.homepage-pdf .pdf-about-inner,body.homepage-pdf .pdf-footer-inner {width:calc(100% - 48px);margin-left:24px;margin-right:24px;}
+}
+@media(max-width:700px){
+  body.homepage-pdf #navbar {margin:10px 10px 0;width:calc(100% - 20px);}
+  body.homepage-pdf .pdf-shell {width:calc(100% - 32px);margin-left:16px;margin-right:16px;}
+  body.homepage-pdf .pdf-hero {width:calc(100% - 20px);margin:0 10px;padding:20px 0 15px;}
+  body.homepage-pdf .pdf-hero-inner {grid-template-columns:1fr;gap:12px;}
+  body.homepage-pdf .pdf-profile-portrait {grid-row:1;width:164px;height:164px;margin:0 auto;}
+  body.homepage-pdf .pdf-hero-copy h1 {font-size:26px;text-align:center;}
+  body.homepage-pdf .pdf-role,body.homepage-pdf .pdf-affiliation {text-align:center;font-size:11px;}
+  body.homepage-pdf .pdf-research-focus {display:block;margin-top:13px;font-size:11px;}
+  body.homepage-pdf .pdf-research-summary {font-size:11.7px;line-height:1.5;}
+  body.homepage-pdf .pdf-link-row {flex-direction:column;align-items:stretch;padding:11px 0;}
+  body.homepage-pdf .pdf-profile-links {justify-content:center;gap:6px;}
+  body.homepage-pdf .pdf-profile-links a {font-size:11px;padding:6px 8px;}
+  body.homepage-pdf .pdf-open-link {align-self:center;font-size:11px;}
+  body.homepage-pdf .pdf-highlight-title {font-size:20px;line-height:1.35;margin-bottom:12px;}
+  body.homepage-pdf .pdf-two-column {grid-template-columns:1fr;}
+  body.homepage-pdf .pdf-stat-grid {padding-left:0;}
+  body.homepage-pdf .pdf-stat-row-top,body.homepage-pdf .pdf-stat-row-bottom {grid-template-columns:repeat(3,minmax(0,1fr));}
+  body.homepage-pdf .pdf-stat {min-height:59px;}
+  body.homepage-pdf .pdf-stat strong {font-size:15px;}
+  body.homepage-pdf .pdf-stat span {font-size:10px;}
+  body.homepage-pdf .pdf-data-block {margin-bottom:18px;}
+  body.homepage-pdf .pdf-data-block li {font-size:12px;line-height:1.5;}
+  body.homepage-pdf .pdf-section-heading {font-size:14px;}
+  body.homepage-pdf .pdf-sidebar {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-top:9px;}
+  body.homepage-pdf .pdf-side-card {margin:0;padding:0 11px 14px;}
+  body.homepage-pdf .pdf-side-card h3 {margin:0 -11px 9px;}
+  body.homepage-pdf .pdf-side-card li {font-size:11.5px;line-height:1.45;}
+  body.homepage-pdf .pdf-publications {padding-top:25px;}
+  body.homepage-pdf .pdf-publications ul {padding-left:22px;}
+  body.homepage-pdf .pdf-publications li {font-size:12px;line-height:1.5;}
+  body.homepage-pdf .pdf-about,body.homepage-pdf .pdf-footer {width:calc(100% - 20px);margin-left:10px;margin-right:10px;}
+  body.homepage-pdf .pdf-about {padding:20px 0!important;}
+  body.homepage-pdf .pdf-about-inner,body.homepage-pdf .pdf-footer-inner {width:calc(100% - 32px);margin:0 16px;}
+  body.homepage-pdf .about-grid {grid-template-columns:1fr;}
+  body.homepage-pdf .pdf-footer-top {gap:10px;}
+  body.homepage-pdf .pdf-footer-links {gap:12px;}
+}
+@media(max-width:480px){
+  body.homepage-pdf .pdf-hero-copy h1 {font-size:22px;}
+  body.homepage-pdf .pdf-hero-copy h1 span {white-space:normal;display:block;margin-top:3px;font-size:14px;}
+  body.homepage-pdf .pdf-profile-links {justify-content:center;}
+  body.homepage-pdf .pdf-stat-row-top,body.homepage-pdf .pdf-stat-row-bottom {grid-template-columns:repeat(2,minmax(0,1fr));}
+  body.homepage-pdf .pdf-sidebar {grid-template-columns:1fr;}
+  body.homepage-pdf .pdf-side-card li {font-size:13px;}
+  body.homepage-pdf .pdf-footer-links {column-gap:13px;row-gap:5px;}
+  body.homepage-pdf .pdf-footer-links a {font-size:11px;}
+}
+@media(prefers-reduced-motion:reduce){body.homepage-pdf *,body.homepage-pdf *::before,body.homepage-pdf *::after{animation:none!important;transition:none!important;}}
